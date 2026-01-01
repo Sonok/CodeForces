@@ -1,4 +1,4 @@
-// how to compile g++ -std=gnu++17 -O2 main.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 32B_Borze.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
