@@ -25,7 +25,6 @@ const int MOD = 1e9 + 7;
 
 
 
-// A wins if there's a segment of 0s and 1s with one 1
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
     cin.tie(nullptr); // disable autoflush of cout
@@ -35,20 +34,21 @@ int main() {
     vector<string> out;
 
     while (t--) {
-        int n; cin >> n;
-        int ones = 0;
-        for (int i = 0; i < n; i++) {
-            int x;
-            cin >> x;
-            if (x == 1) ones++;
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for (int i = 0; i < n; i++) cin >> a[i];
+
+        bool alice;
+        if (n == 1) {
+            alice = (a[0] == 0);
+        } else if (n == 2) {
+            alice = (a[0] == 1 && a[1] == 1);
+        } else {
+            alice = !(a[0] == 0 && a[n - 1] == 0);
         }
 
-        int zeros = n - ones;
-
-        if (ones >= zeros)
-            cout << "Alice\n";
-        else
-            cout << "Bob\n";
+        cout << (alice ? "Alice\n" : "Bob\n");
     }
 
     return 0;
