@@ -25,23 +25,53 @@ I’m currently **taking theory slowly** and prioritizing practice:
 
 ```
 Codeforces/
-├── MockComp/
-│   └── MockComp1Div3/
+├── MockComp
+│   └── MockComp1Div3
 │       ├── Mock1A.cpp
 │       ├── Mock1B.cpp
 │       ├── Mock1C.cpp
 │       └── main
-├── gym/
-│   ├── r0800/
-│   ├── r0900/
-│   ├── r1000/
-│   ├── r1100/
-│   ├── r1200/
-│   └── r1300/
-└── templates/
+├── README.md
+├── RealComp
+│   ├── First
+│   ├── FirstA.cpp
+│   └── main
+├── gym
+│   ├── r0800
+│   │   ├── 163B_Queue_At_School.cpp
+│   │   ├── 163B_Queue_At_School.py
+│   │   ├── 263A_Beautiful_Matrix.cpp
+│   │   ├── 263A_Beautiful_Matrix.py
+│   │   ├── 271A_Beautiful_Year.cpp
+│   │   ├── 271A_Beautiful_Year.py
+│   │   ├── 32B_Borze.cpp
+│   │   ├── 32B_Borze.py
+│   │   ├── 61A_Ultra_Fast_Mathematician.cpp
+│   │   └── 61A_Ultra_Fast_Mathematician.py
+│   ├── r0900
+│   │   ├── 320A_Magic_Numbers.cpp
+│   │   ├── 320A_Magic_Numbers.py
+│   │   └── 337A_Puzzles.cpp
+│   ├── r1000
+│   │   ├── 219A_k-string.cpp
+│   │   ├── 230A_Dragons.cpp
+│   │   ├── 352A_Jeff_And_Digits.cpp
+│   │   ├── 352A_Jeff_And_Digits.py
+│   │   ├── 69A_young_physicist.cpp
+│   │   ├── 69A_young_physicist.py
+│   │   └── main
+│   ├── r1100
+│   │   ├── 365B_The_Fibonacci_Segment.cpp
+│   │   ├── 456A_Laptops.cpp
+│   │   └── main
+│   ├── r1200
+│   │   ├── 433B_Kuriyama_Mirai_Stones.cpp
+│   │   └── main
+│   └── r1300
+│       └── 142B_T-primes.py
+└── templates
     ├── starter.cpp
     └── starter.py
-```
 
 ---
 

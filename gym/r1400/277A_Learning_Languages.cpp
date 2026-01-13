@@ -1,4 +1,4 @@
-// how to compile g++ -std=gnu++17 -O2 456A_Laptops.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 277A_Learning_Languages.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
