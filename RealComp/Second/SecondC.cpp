@@ -1,4 +1,4 @@
-// how to compile g++ -std=gnu++17 -O2 SecondB.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 SecondC.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -27,15 +27,19 @@ int main() {
         for (int i = 0, x; i < n && cin >> x; i++)
             v.push_back(x);
         sort(v.begin(), v.end());
-        int i = 1;
-        while(i < n) {
-            if(v[i] - i != v[0]) {
-                cout << i << "\n";
-                break;
+        v.erase(unique(v.begin(), v.end()), v.end());
+
+        int run = 1; // sliding window of longest run
+        int currRun = 1;
+        for(int index = 0; index < v.size() - 1; index++) {
+            if (v[index] + 1 == v[index + 1]) {
+                currRun++;
+                run = max(run, currRun);
+            } else {
+                currRun = 1;
             }
-            i++;
         }
-        cout >> n >> "\n"
+        cout << run << "\n";
     }
     return 0;
 }
