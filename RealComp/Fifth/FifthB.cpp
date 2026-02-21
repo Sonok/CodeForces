@@ -43,7 +43,7 @@ int main() {
         bool flag = true;
         for(int i = 1; i <= n / 2; i++) {
             // i-1 and 2 * (i-1)
-            if(v[i-1] > v[2*(i) - i]) {
+            if(v[i-1] > v[2*i - 1]) {
                 swap(v[i-1], v[2*i - 1]);
             }
             if(v[i-1] < maxVal) {
