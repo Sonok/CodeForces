@@ -1,15 +1,16 @@
 # Codeforces Practice Repository
 
-Current Rating: 1071  
-Contests Completed: 6  
+**Current Rating:** 1071
+**Contests Completed:** 6
 
-So far I’ve only had time to compete in Div 2 contests. At this level, rating does not move much unless you consistently solve A–C, so the focus right now is speed, pattern recognition, and execution.
+So far I’ve only had time to compete in **Div 2 contests**. At this level, rating does not move much unless you consistently solve **A–C**, so the focus right now is speed, pattern recognition, and execution.
 
 I’m treating competitive programming like a real class:
-- Show up consistently
-- Attempt every problem during contests
-- Try to solve everything, even if it feels hard
-- Internalize patterns through repetition
+
+* Show up consistently
+* Attempt every problem during contests
+* Try to solve everything, even if it feels hard
+* Internalize patterns through repetition
 
 Progress is not linear. Consistency compounds.
 
@@ -18,17 +19,19 @@ Progress is not linear. Consistency compounds.
 ## Contest Strategy
 
 ### Day of Competition
-- Caffeine
-- Water
-- Clear head
-- No overthinking
+
+* Caffeine
+* Water
+* Clear head
+* No overthinking
 
 ### During Contest
-- Start with A immediately. It is usually the most intuitive solution.
-- Look at constraints before coding.
-- Do what is easiest first.
-- Speed matters more right now than over-optimizing.
-- TLEs are usually a later-stage issue. Implementation speed is the priority.
+
+* Start with **A immediately**. It is usually the most intuitive solution.
+* Look at constraints before coding.
+* Do what is easiest first.
+* Speed matters more right now than over-optimizing.
+* TLEs are usually a later-stage issue. Implementation speed is the priority.
 
 The goal right now is building instincts and solving faster under pressure.
 
@@ -36,6 +39,7 @@ The goal right now is building instincts and solving faster under pressure.
 
 ## Repository Structure
 
+```
 .
 ├── 398L
 │   ├── DigitQueries.cpp
@@ -131,15 +135,17 @@ The goal right now is building instincts and solving faster under pressure.
     └── starter.py
 
 22 directories, 71 files
+```
 
 ---
 
 ## Purpose
 
-- Build strong problem-solving intuition
-- Improve rating through consistent volume
-- Increase implementation speed
-- Get comfortable solving under contest pressure
+* Build strong problem-solving intuition
+* Improve rating through consistent volume
+* Increase implementation speed
+* Get comfortable solving under contest pressure
 
 Right now the priority is simple:
 Solve faster. Recognize patterns sooner. Keep showing up.
+
