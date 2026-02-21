@@ -1,30 +1,53 @@
-# Codeforces Solutions
+# Codeforces Practice Repository
 
-This repository contains my **Codeforces** solutions written in mainly **C++** and some **Python**.
-Problems are organized by **rating**, **mock contests**, **real contests**, and **practice structure**.
+Current Rating: 1071  
+Contests Completed: 6  
+
+So far I’ve only had time to compete in Div 2 contests. At this level, rating does not move much unless you consistently solve A–C, so the focus right now is speed, pattern recognition, and execution.
+
+I’m treating competitive programming like a real class:
+- Show up consistently
+- Attempt every problem during contests
+- Try to solve everything, even if it feels hard
+- Internalize patterns through repetition
+
+Progress is not linear. Consistency compounds.
 
 ---
 
-## Current Status
+## Contest Strategy
 
-* **Codeforces rating:** Unrated
-* **First contest:** *Welcome 2026* (Jan 7th 9:35-12:35)
-* **Short-term goal:** Reach **1200** after my first few contests
-* **Long-term goal:** Reach **1500** through consistent practice
-* **Focus:** Solving problems getting to a point were DSA is important not just implementation
+### Day of Competition
+- Caffeine
+- Water
+- Clear head
+- No overthinking
 
-I’m currently **taking theory slowly** and prioritizing practice:
+### During Contest
+- Start with A immediately. It is usually the most intuitive solution.
+- Look at constraints before coding.
+- Do what is easiest first.
+- Speed matters more right now than over-optimizing.
+- TLEs are usually a later-stage issue. Implementation speed is the priority.
 
-* Reading *Introduction to Competitive Programming*
-* Progress: **41 / 279 pages**
-* Finished 17 problems with my highest rating solved is 1300
+The goal right now is building instincts and solving faster under pressure.
 
 ---
 
 ## Repository Structure
 
-```
-Codeforces/
+.
+├── 398L
+│   ├── DigitQueries.cpp
+│   ├── HW1A.cpp
+│   ├── HW1B.cpp
+│   ├── HW1C.cpp
+│   ├── Tower_of_Hanoi.cpp
+│   ├── main
+│   └── main.dSYM
+│       └── Contents
+│           ├── Info.plist
+│           └── Resources
 ├── MockComp
 │   └── MockComp1Div3
 │       ├── Mock1A.cpp
@@ -33,11 +56,36 @@ Codeforces/
 │       └── main
 ├── README.md
 ├── RealComp
-│   ├── First
+│   ├── Fifth
+│   │   ├── FifthA.cpp
+│   │   ├── FifthB.cpp
+│   │   ├── FifthC.cpp
+│   │   └── main
 │   ├── FirstA.cpp
+│   ├── Fourth
+│   │   ├── FourthA.cpp
+│   │   ├── FourthB.cpp
+│   │   └── main
+│   ├── Second
+│   │   ├── SecondA.cpp
+│   │   ├── SecondB.cpp
+│   │   ├── SecondC.cpp
+│   │   └── main
+│   ├── Sixth
+│   │   ├── SixthA.cpp
+│   │   ├── SixthB.cpp
+│   │   └── main
+│   ├── Third
+│   │   ├── ThirdA.cpp
+│   │   ├── ThirdB.cpp
+│   │   ├── ThirdC.cpp
+│   │   ├── ThirdD.cpp
+│   │   └── main
 │   └── main
 ├── gym
 │   ├── r0800
+│   │   ├── 1020_A_Dr_TC.cpp
+│   │   ├── 1072A_Social_Experiment.cpp
 │   │   ├── 163B_Queue_At_School.cpp
 │   │   ├── 163B_Queue_At_School.py
 │   │   ├── 263A_Beautiful_Matrix.cpp
@@ -47,11 +95,14 @@ Codeforces/
 │   │   ├── 32B_Borze.cpp
 │   │   ├── 32B_Borze.py
 │   │   ├── 61A_Ultra_Fast_Mathematician.cpp
-│   │   └── 61A_Ultra_Fast_Mathematician.py
+│   │   ├── 61A_Ultra_Fast_Mathematician.py
+│   │   └── main
 │   ├── r0900
+│   │   ├── 1020_B_St_Chroma.cpp
 │   │   ├── 320A_Magic_Numbers.cpp
 │   │   ├── 320A_Magic_Numbers.py
-│   │   └── 337A_Puzzles.cpp
+│   │   ├── 337A_Puzzles.cpp
+│   │   └── main
 │   ├── r1000
 │   │   ├── 219A_k-string.cpp
 │   │   ├── 230A_Dragons.cpp
@@ -65,77 +116,30 @@ Codeforces/
 │   │   ├── 456A_Laptops.cpp
 │   │   └── main
 │   ├── r1200
+│   │   ├── 239A_Two_Bags_of_Potatoes.cpp
+│   │   ├── 328B_Hungry_Sequence.cpp
 │   │   ├── 433B_Kuriyama_Mirai_Stones.cpp
 │   │   └── main
-│   └── r1300
-│       └── 142B_T-primes.py
+│   ├── r1300
+│   │   ├── 142B_T-primes.py
+│   │   ├── 257B_Playing_Cubes.cpp
+│   │   └── main
+│   └── r1400
+│       └── 277A_Learning_Languages.cpp
 └── templates
     ├── starter.cpp
     └── starter.py
 
----
-
-## gym/ (Practice by Rating)
-
-Practice problems grouped by Codeforces difficulty rating:
-
-* r0800
-* r0900
-* r1000
-* r1100
-* r1200
-* r1300
-
-### File Naming Convention
-
-```
-<problemID>_<problem_name>.<extension>
-```
-
-Example:
-
-* `263A_Beautiful_Matrix.cpp`
-* `263A_Beautiful_Matrix.py`
-
----
-
-## MockComp/
-
-Contains solutions from mock contests, organized by contest and division.
-
----
-
-## templates/
-
-Starter templates used for contests and practice:
-
-* Fast I/O
-* Common includes
-* Python boilerplate
-
----
-
-## How to Run
-
-### C++
-
-```bash
-g++ file.cpp -o run
-./run
-```
-
-### Python
-
-```bash
-python3 file.py
-```
+22 directories, 71 files
 
 ---
 
 ## Purpose
 
-* Build strong problem-solving intuition
-* Improve rating through lots of practice
-* Learn some theory gradually while coding regularly
+- Build strong problem-solving intuition
+- Improve rating through consistent volume
+- Increase implementation speed
+- Get comfortable solving under contest pressure
 
-Progress will never be this fast, so it's important to use it
+Right now the priority is simple:
+Solve faster. Recognize patterns sooner. Keep showing up.
