@@ -1,7 +1,7 @@
 # Codeforces Practice Repository
 
-**Current Rating:** 1071
-**Contests Completed:** 6
+**Current Rating:** 1152
+**Contests Completed:** 7
 
 So far I’ve only had time to compete in **Div 2 contests**. At this level, rating does not move much unless you consistently solve **A–C**, so the focus right now is speed, pattern recognition, and execution.
 
