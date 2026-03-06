@@ -29,7 +29,7 @@ int main() {
     cin.tie(nullptr); // disable autoflush of cout
 
     map<int, int> windowSlide;
-    int count = 0;
+    ll count = 0;
     vector<int> v;
 
     int trailing = 0;
