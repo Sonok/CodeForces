@@ -1,4 +1,4 @@
-// how to compile g++ -std=gnu++17 -O2 285C_Building_Permutations.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 166A_Rank_List.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -23,25 +23,29 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
     cin.tie(nullptr); // disable autoflush of cout
 
-    priority_queue<int, vector<int>, greater<int>> pq; 
-    int n; cin >> n;          // comment this if single test case
+    int n; int k;
+    cin >> n >> k;          // comment this if single test case
+    vector<pair<int, int>> a(n);
+
     for(int i = 0; i < n; i++) {
-        int x; cin >> x;
-        pq.push(x);
+        cin >> a[i].first >> a[i].second;
     }
-    ll total = 0;
-    for(int i = 1; i <= n; i++) {
-        total += abs(pq.top() - i);
-        pq.pop();
+    sort(a.begin(), a.end(), [](const auto& x, const auto& y) {
+        if(x.first == y.first) return x.second < y.second;
+        else return x.first > y.first;
+    });
+
+    pair<int, int> kth = a[k-1];
+    int count = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == kth) count++;
     }
-    cout << total;
+    cout << count;
     return 0;
 }
