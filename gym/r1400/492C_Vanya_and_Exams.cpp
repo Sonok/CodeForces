@@ -37,8 +37,10 @@ int main() {
     ll total = 0;
 
     for(int i = 0; i < n; i++) {
-        cin >> vec[i].first >> vec[i].second;
-        total += vec[i].first;
+        int a, b;
+        cin >> a >> b;
+        vec[i].first = r - a; vec[i].second = b;
+        total += a;
     }
     ll countEssays = 0;
     sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
@@ -47,14 +49,10 @@ int main() {
     int i = 0; // this is the index for the least amount of essays we have to read
     ll diff = 1LL*avg*n - total;
     while(diff > 0) {
-        if(r - vec[i].first <= diff) {
-            diff -= r - vec[i].first; // we raise up by some amount of points
-            countEssays += 1LL*vec[i].second * (r - vec[i].first); // the amount of essay * filling this grade
-            i++;
-        } else { // we are finished
-            countEssays += 1LL*vec[i].second * diff;
-            break;
-        }
+        ll points = min(1LL*vec[i].first, diff);
+        diff -= points; // we raise up by some amount of points
+        countEssays += 1LL*vec[i].second * points; // the amount of essay * filling this grade
+        i++;
     }
     cout << countEssays;
     return 0;
