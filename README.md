@@ -149,3 +149,13 @@ The goal right now is building instincts and solving faster under pressure.
 Right now the priority is simple:
 Solve faster. Recognize patterns sooner. Keep showing up.
 
+
+---
+
+## Restart (Sept 2026)
+
+* `0-1000/` — archive. Everything up to the restart, left as is. It got me to 1000+.
+* `1000-1400/` — current work, one folder per skill. Each skill has a README with the patterns,
+  formulas, pitfalls, a plan of 2024+ problems, and a log. The index README has the contest log.
+* `.claude/agents/` — `coach` (hints only) and `stress-test` (brute-force verification).
+* Target: 1400 by end of 2026.
