@@ -1,6 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 91 / 200** as of 2026-10-01.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -50,3 +51,4 @@ Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separat
 - `claude` agents in `../.claude/agents/`: `coach` gives graded hints without the answer,
   `stress-test` brute-forces my solution on random inputs and finds a failing case.
 - Compile: `g++ -std=gnu++17 -O2 X.cpp -o main && ./main` (no `bits/stdc++.h` on Mac clang).
+| 2026-10-01 | [1921C Sending Messages](https://codeforces.com/problemset/problem/1921/C) | 1000 | greedy | 50+ min | accepted with hints | algorithm fast, lost 40 min to misreading start time, int overflow, then float precision |
