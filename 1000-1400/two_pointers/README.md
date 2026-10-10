@@ -24,7 +24,7 @@ Two indices that only ever move forward. Total work O(n) because each pointer mo
 
 ## Plan
 1. [ ] [1968B Prefiquence](https://codeforces.com/problemset/problem/1968/B) (900)
-2. [ ] [2051D Counting Pairs](https://codeforces.com/problemset/problem/2051/D) (1200)
+2. [ ] [2051D Counting Pairs](https://codeforces.com/problemset/problem/2051/D) (1200) — tags seen 2026-10-10, not blind anymore
 3. [ ] [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300)
 4. [ ] [2025C New Game](https://codeforces.com/problemset/problem/2025/C) (1300)
 5. [ ] [2032C Trinity](https://codeforces.com/problemset/problem/2032/C) (1400)
