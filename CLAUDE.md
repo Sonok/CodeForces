@@ -11,8 +11,10 @@ Owner is rated ~1150, target 1400 by 2026-12-31. One timed problem a day.
 - `templates/starter.cpp` is the template for every new file.
 
 ## Conventions
-- New problem file: `1000-1400/<skill>/<contest><letter>_<Name>.cpp`. Statement in a `/* */` block
-  on top, then the compile-line comment, then the template.
+- New problem file goes in `1000-1400/inbox/<contest><letter>_<Name>.cpp`. Statement in a `/* */` block
+  on top, then the compile-line comment, then the template. The owner solves blind: never say the
+  skill, tag, or idea of an unsolved problem, and don't put it in a skill folder or a skill README plan.
+  After it is solved, move it to `1000-1400/<skill>/` and log it.
 - Only problems from 2024 or later (contest id 1917+). Older problems are under-rated today.
 - After a problem is solved: tick it in the skill README plan, add a row to the skill log and the
   index contest log (date, time taken, result, one-line lesson).

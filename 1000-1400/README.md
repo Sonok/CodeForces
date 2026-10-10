@@ -1,11 +1,12 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 91 / 200** as of 2026-10-01.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 92 / 200** as of 2026-10-09.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
-- One timed problem a day. Every problem goes in the folder of the skill it tested,
+- One timed problem a day. A new problem lands in `inbox/` with no topic given, so I solve it
+  blind like in a contest. After it's solved it moves to the folder of the skill it tested,
   named `<contest><letter>_<Name>.cpp`, statement in a comment on top.
 - Each skill folder has a README: what the skill is, the patterns and formulas, the
   pitfalls, a plan of problems in order, and a log of what I solved and what went wrong.
@@ -23,7 +24,7 @@ standards, so they don't count. Ratings listed are approximate.
 | 1 | Greedy | in progress | [greedy](greedy/) |
 | 1 | Two pointers / sliding window | not started | [two_pointers](two_pointers/) |
 | 1 | Binary search (on answer) | not started | [binary_search](binary_search/) |
-| 1 | Prefix sums / difference arrays | not started | [prefix_sums](prefix_sums/) |
+| 1 | Prefix sums / difference arrays | in progress | [prefix_sums](prefix_sums/) |
 | 1 | Constructive | not started | [constructive](constructive/) |
 | 1 | Number theory | not started | [number_theory](number_theory/) |
 | 2 | DP | not started | [dp](dp/) |
@@ -52,3 +53,4 @@ Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separat
   `stress-test` brute-forces my solution on random inputs and finds a failing case.
 - Compile: `g++ -std=gnu++17 -O2 X.cpp -o main && ./main` (no `bits/stdc++.h` on Mac clang).
 | 2026-10-01 | [1921C Sending Messages](https://codeforces.com/problemset/problem/1921/C) | 1000 | greedy | 50+ min | accepted with hints | algorithm fast, lost 40 min to misreading start time, int overflow, then float precision |
+| 2026-10-09 | [1996C Sort](https://codeforces.com/problemset/problem/1996/C) | 1300 | prefix_sums | ~75 min | accepted with hints | range only matters as a multiset of letters; 26 prefix-count arrays, carry every row forward each step |
