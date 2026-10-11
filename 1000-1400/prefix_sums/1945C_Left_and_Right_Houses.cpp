@@ -111,9 +111,6 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -122,7 +119,41 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+
+        int n; cin >> n;
+        vector<char> vec(n);
+        vector<int> valid;
+        int countZeros = 0;
+
+        for(int i = 0; i < n; i++) {
+            cin >> vec[i];
+            if(vec[i] == '0') countZeros++;
+        } 
+
+        if(countZeros * 2 <= n) { // dominated by rights
+            valid.push_back(0);
+        } else {  // dominated by lefts 
+            valid.push_back(n);
+        }
+        int zeroLHS = 0;
+    
+        for(int i = 0; i < n; i++) {
+            if(vec[i] == '0') {
+                zeroLHS++;
+            }
+            // left hand part of if
+            if(zeroLHS * 2 >= (i+1) && 2*(countZeros-zeroLHS) <= (n-i-1)) {
+                valid.push_back(i+1);
+            }
+        }
+        pair<int, int> best(valid[0], abs(1.0*n/2 - valid[0]));
+        for(int i : valid) {
+            int dist = abs(1.0 * n / 2 - i);
+            if (dist < best.second) {
+                best = {i, dist};
+            }
+        }
+        cout << best.first << "\n";
     }
     return 0;
 }

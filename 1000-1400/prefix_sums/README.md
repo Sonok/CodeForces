@@ -1,6 +1,6 @@
 # Prefix sums / difference arrays
 
-Status: in progress (1 of 5 done)
+Status: in progress (2 of 5 done)
 
 ## What it is
 Precompute running totals so any range query is O(1). Difference arrays do the reverse: many range updates, then one pass to read values.
@@ -22,7 +22,7 @@ Precompute running totals so any range query is O(1). Difference arrays do the r
 - Difference array needs size n+2.
 
 ## Plan
-1. [ ] [1945C Left and Right Houses](https://codeforces.com/problemset/problem/1945/C) (1200)
+1. [x] [1945C Left and Right Houses](https://codeforces.com/problemset/problem/1945/C) (1200)
 2. [ ] [1922C Closest Cities](https://codeforces.com/problemset/problem/1922/C) (1300)
 3. [x] [1996C Sort](https://codeforces.com/problemset/problem/1996/C) (1300)
 4. [ ] [2033D Kousuke's Assignment](https://codeforces.com/problemset/problem/2033/D) (1300)
@@ -33,3 +33,4 @@ Precompute running totals so any range query is O(1). Difference arrays do the r
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
 | 2026-10-09 | 1996C Sort | ~75 min | accepted, with hints | Took a while to see that positions inside the range don't matter, only the 26 letter counts (multiset). Then 26 prefix arrays. Bugs: built the prefix by writing only the current letter's row, so other rows dropped to 0 (must carry all 26 forward every step); treated 1-based l,r as 0-based; divided per letter instead of once at the end. Felt ~100-200 above current level, good difficulty. |
+| 2026-10-11 | 1945C Left and Right Houses | not recorded | accepted, no hints on the idea | Got the whole algorithm alone: running zero count on the left, total minus that on the right, check every cut, keep the nearest to n/2. Three typos cost the rest: right side had n-i houses instead of n-i-1, best was seeded from a char instead of the first valid cut, and n/2 was integer division. Check the first candidate and the boundary counts by hand on a 3-house case. |
