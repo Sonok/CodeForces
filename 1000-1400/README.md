@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 94 / 200** as of 2026-10-11.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 95 / 200** as of 2026-10-12.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -28,7 +28,7 @@ standards, so they don't count. Ratings listed are approximate.
 | 1 | Constructive | not started | [constructive](constructive/) |
 | 1 | Number theory | not started | [number_theory](number_theory/) |
 | 2 | DP | not started | [dp](dp/) |
-| 2 | Graphs: BFS / DFS / grids | not started | [graphs](graphs/) |
+| 2 | Graphs: BFS / DFS / grids | in progress | [graphs](graphs/) |
 | 2 | DSU | not started | [dsu](dsu/) |
 | 2 | Trees | not started | [trees](trees/) |
 | 2 | Bitmasks | not started | [bitmasks](bitmasks/) |
@@ -56,3 +56,4 @@ Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separat
 | 2026-10-09 | [1996C Sort](https://codeforces.com/problemset/problem/1996/C) | 1300 | prefix_sums | ~75 min | accepted with hints | range only matters as a multiset of letters; 26 prefix-count arrays, carry every row forward each step |
 | 2026-10-10 | [1931D Divisible Pairs](https://codeforces.com/problemset/problem/1931/D) | 1200 | number_theory | not recorded | accepted | reduce each element to its residue pair, then count partners with a map in one pass |
 | 2026-10-11 | [1945C Left and Right Houses](https://codeforces.com/problemset/problem/1945/C) | 1200 | prefix_sums | not recorded | accepted, idea found alone | algorithm right first try; three small slips (off-by-one on the right count, seeding best from a char, integer n/2) |
+| 2026-10-12 | [1948C Arrow Path](https://codeforces.com/problemset/problem/1948/C) | 1200 | graphs | not recorded | accepted with vague hints | BFS where one second is one edge; a backward search must reverse the move rule, not just the start cell |

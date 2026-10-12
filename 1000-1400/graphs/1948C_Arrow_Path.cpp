@@ -99,9 +99,52 @@ int main() {
     cin.tie(nullptr); // disable autoflush of cout
 
     int t = 1;
+    vector<pair<int, int>> dirs = {{-1,0}, {1, 0}, {0,1}, {0, -1}};
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        set<pair<int, int>> visited;
+        int n; cin >> n;
+        vector<vector<char>> grid(2, vector<char>(n));
+        for(int i = 0; i < n; i++) cin >> grid[0][i];
+        for(int i = 0; i < n; i++) cin >> grid[1][i];
+
+        bool found = false; 
+        deque<pair<int, int>> dq;
+        dq.emplace_back(0, 0);
+
+        while(dq.size()) {
+            auto [i,j] = dq.front();
+            dq.pop_front();
+
+            if (visited.find({i, j}) != visited.end()) {
+                continue;
+            }
+
+            if (i < 0 || i >= 2 || j < 0 || j >= n) {
+                continue; // invalud 
+            }
+
+            if(i == 1 && j == n-1) {
+                found = true;
+                break;
+            }
+            visited.emplace(i, j);
+            for(auto [dx, dy] : dirs) {
+                int nx = i + dx;
+                int ny = j + dy; 
+
+                if(nx < 0 || nx >= 2 || ny < 0 || ny >= n) {
+                    continue;
+                }
+                if(grid[nx][ny] == '<') {
+                    dq.emplace_back(nx, ny-1);
+                } else {
+                    dq.emplace_back(nx, ny+1);
+                }
+            }
+        }
+        cout << (found ? "Yes" : "No") << "\n";
+
     }
     return 0;
 }

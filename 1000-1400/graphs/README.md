@@ -1,6 +1,6 @@
 # Graphs: BFS / DFS / grids
 
-Status: not started
+Status: in progress (1 solved, 0 of 5 plan items)
 
 ## What it is
 Nodes and edges. BFS gives shortest paths when every edge has cost 1. DFS finds connected components and explores trees. A grid is a graph where each cell has 4 neighbors.
@@ -36,3 +36,4 @@ Nodes and edges. BFS gives shortest paths when every edge has cost 1. DFS finds 
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-12 | 1948C Arrow Path | not recorded | accepted, vague hints | Solved it as a BFS over the 2 x n grid, one second = step then arrow = one edge. Went wrong twice before it ran: (1) started from the exit but applied the forward move rule, so the search answered a different question; reversing a search means reversing the move too. (2) Inserted the start into visited before popping it, so the BFS skipped itself. Also: goal check belongs on the popped cell, answer belongs in a bool flag, not q.size(). |

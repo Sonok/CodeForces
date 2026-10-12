@@ -23,7 +23,7 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 - Memory: 2D of 1e4 x 1e4 ints is 400 MB. Roll the array if only the previous row is needed.
 
 ## Plan
-1. [ ] [1948C Arrow Path](https://codeforces.com/problemset/problem/1948/C) (1200, grid)
+1. [x] [1948C Arrow Path](https://codeforces.com/problemset/problem/1948/C) (1200, grid) — solved 2026-10-12 with BFS, filed in [graphs](../graphs/)
 2. [ ] [1941D Rudolf and the Ball Game](https://codeforces.com/problemset/problem/1941/D) (1300)
 3. [ ] [2033C Sakurako's Field Trip](https://codeforces.com/problemset/problem/2033/C) (1400)
 4. [ ] [2050E Three Strings](https://codeforces.com/problemset/problem/2050/E) (1500)
