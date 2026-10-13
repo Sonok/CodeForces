@@ -1,6 +1,6 @@
 # DSU (union-find)
 
-Status: not started
+Status: in progress (1 solved)
 
 ## What it is
 Keep track of which elements are in the same group while merging groups. Two ops, `find` and `unite`, both effectively O(1).
@@ -27,6 +27,7 @@ Keep track of which elements are in the same group while merging groups. Two ops
 - When the graph is given fully up front and you only need components once, plain DFS is equally fine. DSU wins when edges arrive over time.
 
 ## Plan
+0. [x] [2008D Sakurako's Hobby](https://codeforces.com/problemset/problem/2008/D) (1100) — solved 2026-10-12, came from the graphs plan
 1. [ ] [1971G XOUR](https://codeforces.com/problemset/problem/1971/G) (1400)
 2. [ ] [2060E Graph Composition](https://codeforces.com/problemset/problem/2060/E) (1500)
 3. [ ] [1985H1 Maximize the Largest Component, Easy](https://codeforces.com/problemset/problem/1985/H1) (1700, stretch)
@@ -36,3 +37,4 @@ Keep track of which elements are in the same group while merging groups. Two ops
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-12 | 2008D Sakurako's Hobby | not recorded | accepted, with hints | Spotted DSU on my own but had to rebuild the struct from memory (path compression, union by size, `union` is a keyword). Joined i with p_i, correct. Then tried to count blacks by walking the parent chain, which only sees one branch of the set's tree. Fix: loop all nodes once, add each black to `cnt[find(i)]`, then answer is `cnt[find(i)]`. Realization that unlocked it: a permutation has in-degree = out-degree = 1 everywhere, so every component is a cycle and "reachable from i" is the whole component. |

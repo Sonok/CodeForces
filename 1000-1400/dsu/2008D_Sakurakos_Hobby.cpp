@@ -94,9 +94,33 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+struct DSU {
+    vector<int> parent, size;
+    DSU(int n): parent(n+1), size(n+1, 1) {
+        iota(parent.begin(), parent.end(), 0);
+    }
+    int find(int x) {
+        while(parent[x] != x) {
+            x = parent[x];
+        }
+        return x;
+    }
+    void join(int a, int b) {
+        a = find(a);
+        b = find(b);
+        if(a == b) return;
+        if(size[a] >= size[b]) {
+            parent[b] = a;
+            size[a] += size[b];
+        } else {
+            parent[a] = b;
+            size[b] += size[a];
+        }
+    }
+    bool connected(int a, int b) {
+        return find(a) == find(b);
+    }
+};
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -105,7 +129,28 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n; 
+        vector<int> vec(n+1, 0);
+        for(int i = 1; i <= n; i++) {
+            cin >> vec[i]; // we one index it 
+        }
+
+        string s; cin >> s; // so we can find if a thing is black or not
+
+        DSU d(n);
+        for(int i = 1; i <= n; i++) {
+            d.join(vec[i], i);
+        }
+        vector<int> black(n+1, 0);
+        for(int i = 1; i <= n; i++) {
+            if(s[i-1] == '0') {
+                black[d.find(i)]++;
+            }
+        }
+        for(int i = 1; i <= n; i++) {
+            cout << black[d.find(i)] << " ";
+        }
+        cout << "\n";
     }
     return 0;
 }

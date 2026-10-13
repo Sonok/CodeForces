@@ -26,7 +26,7 @@ Nodes and edges. BFS gives shortest paths when every edge has cost 1. DFS finds 
 - Grid index as `id = x * w + y` if you want to reuse graph code.
 
 ## Plan
-1. [ ] [2008D Sakurako's Hobby](https://codeforces.com/problemset/problem/2008/D) (1100, permutation cycles)
+1. [x] [2008D Sakurako's Hobby](https://codeforces.com/problemset/problem/2008/D) (1100, permutation cycles) — solved 2026-10-12 with DSU, filed in [dsu](../dsu/)
 2. [ ] [1968D Permutation Game](https://codeforces.com/problemset/problem/1968/D) (1400, functional graph)
 3. [ ] [2033E Sakurako, Kosuke, and the Permutation](https://codeforces.com/problemset/problem/2033/E) (1400, cycles)
 4. [ ] [2034C Trapped in the Witch's Labyrinth](https://codeforces.com/problemset/problem/2034/C) (1500, grid DFS)
