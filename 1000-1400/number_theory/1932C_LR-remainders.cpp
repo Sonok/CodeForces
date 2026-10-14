@@ -72,7 +72,7 @@ In the first test case:
   - 1 mod 6 = 1, then remove the leftmost. The array is empty.
 */
 
-// how to compile g++ -std=gnu++17 -O2 1932C_LR-remainders.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 1932C.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -98,9 +98,6 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -109,7 +106,38 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n, m;
+        cin >> n >> m;
+        vector<int> v(n, 0);
+        for(int i = 0; i < n; i++) cin >> v[i];
+        string s; cin >> s;
+
+        int last = 0;
+        int x = 0;
+        for(int i = 0; i < n-1; i++) {
+            if(s[i] == 'L') {
+                x++;
+            }
+        }
+        int l = x-1;
+        int r = x+1;
+        ll product = v[x] % m;
+        vector<ll> result;
+        result.push_back(product);
+
+        for(int index = n-2; index >= 0; index--) {
+            if (s[index] == 'L') {
+                product = product * v[l] % m;
+                l--;
+            } else {
+                product = product * v[r] % m;
+                r++;
+            }
+            result.push_back(product);
+        }
+        reverse(result.begin(), result.end());
+        for(int i = 0; i < n; i++) cout << result[i] << " ";
+        cout << "\n";
     }
     return 0;
 }

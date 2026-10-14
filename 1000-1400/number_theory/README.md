@@ -26,7 +26,7 @@ Divisors, gcd, lcm, primes, modular arithmetic, parity. Count something without 
 1. [ ] [2034A King Keykhosrow's Mystery](https://codeforces.com/problemset/problem/2034/A) (1000, lcm)
 2. [ ] [2043B Digits](https://codeforces.com/problemset/problem/2043/B) (1100)
 3. [x] [1931D Divisible Pairs](https://codeforces.com/problemset/problem/1931/D) (1200)
-4. [ ] [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) (1200)
+4. [x] [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) (1200)
 5. [ ] [2044E Insane Problem](https://codeforces.com/problemset/problem/2044/E) (1300)
 6. [ ] [1980D GCD-sequence](https://codeforces.com/problemset/problem/1980/D) (1600, stretch)
 
@@ -35,3 +35,4 @@ Divisors, gcd, lcm, primes, modular arithmetic, parity. Count something without 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
 | 2026-10-10 | 1931D Divisible Pairs | not recorded | accepted | A pair works iff (a_i mod x, a_i mod y) and (a_j mod x, a_j mod y) have mod-y parts equal and mod-x parts summing to 0 mod x. One sweep with a map keyed by the residue pair: look up the partner key ((x - r) % x, s) before inserting. The `% x` on the partner handles r = 0. |
+| 2026-10-14 | [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) | not recorded | accepted with hints | tried to factorize and divide out removed elements (CRT rabbit hole); no inverse mod composite m, so reverse the commands and only multiply. Survivor index = count of L in first n-1 commands |
