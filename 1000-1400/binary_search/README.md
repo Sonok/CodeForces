@@ -23,9 +23,10 @@ If "is X achievable?" is monotone in X (true for all X up to some point, then fa
 - `mid = (lo + hi) / 2` overflows when lo + hi > 2e9. Use `lo + (hi - lo) / 2`.
 - Infinite loop when `lo = mid` with `mid = (lo+hi)/2`. Match the rounding to the branch.
 - Verify the monotonicity in one sentence before coding. If ok(x) can go true, false, true, it's not binary search.
+- Interpolating between two checkpoints: compute `(d - a0) * (b1 - b0) / (a1 - a0)` entirely in `long long` (`1LL *`). Going through `double` to dodge overflow truncates exact integers to n-1.
 
 ## Plan
-1. [ ] [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) (1100)
+1. [x] [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) (1100)
 2. [ ] [2014C Robin Hood in Town](https://codeforces.com/problemset/problem/2014/C) (1100)
 3. [ ] [2020B Brightness Begins](https://codeforces.com/problemset/problem/2020/B) (1200)
 4. [ ] [2093E Min Max MEX](https://codeforces.com/problemset/problem/2093/E) (1300)
@@ -35,3 +36,4 @@ If "is X achievable?" is monotone in X (true for all X up to some point, then fa
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-14 | [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) | not recorded | accepted, idea found alone | lower_bound on the checkpoint array was right first try; lost the rest to escaping int overflow with `double` instead of `1LL *` (truncation of 92.999... gave 92) |

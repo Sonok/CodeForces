@@ -91,7 +91,7 @@ the answers to the queries are:
   - at point 5, the time will be 4.16... minutes, so the answer is 4.
 */
 
-// how to compile g++ -std=gnu++17 -O2 1971E_Find_the_Car.cpp -o main && ./main
+// how to compile g++ -std=gnu++17 -O2 1971E.cpp -o main && ./main
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -128,7 +128,28 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n, k, q;
+        cin >> n >> k >> q;
+
+        vector<int> a(k+1, 0); // points
+        vector<int> b(k+1, 0); // times
+
+        for(int i=1; i<=k;i++) cin >> a[i];
+        for(int i=1; i<=k;i++) cin >> b[i];
+
+        while(q--) {
+            int dist;
+            cin >> dist;
+
+            int idx = lower_bound(a.begin(), a.end(), dist) - a.begin();
+            if(a[idx] == dist) {
+                cout << b[idx] << "\n";
+            } else {
+                // b[idx - 1]  how long it took we have to find in between
+                ll leftover = 1LL * (dist - a[idx-1]) * (b[idx] - b[idx - 1]) / (a[idx] - a[idx - 1]) ;
+                cout << (ll) (b[idx - 1] + leftover) << "\n";
+            }
+        }
     }
     return 0;
 }
