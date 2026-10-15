@@ -21,7 +21,7 @@ standards, so they don't count. Ratings listed are approximate.
 
 Rough rating per skill, updated after every solve. "Solo" means the idea was found without hints.
 Most rows rest on one or two problems, so treat them as a first guess, not a verdict.
-Overall rating ~1150 as of 2026-10-14.
+Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 
 | Skill | Solved | Est. | Confidence | Evidence |
 |---|---|---|---|---|

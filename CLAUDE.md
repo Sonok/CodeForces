@@ -1,6 +1,6 @@
 # Codeforces practice repo
 
-Owner is rated ~1150, target 1400 by 2026-12-31. One timed problem a day.
+Owner is rated 1100 (2026-10-14), target 1400 by 2026-12-31. One timed problem a day.
 
 ## Layout
 - `0-1000/` archive. Jumbled on purpose. Never reorganize or categorize it.

@@ -1,6 +1,6 @@
 # Codeforces Practice Repository
 
-**Current Rating:** ~1150 (2026-10-14)
+**Current Rating:** 1100 (2026-10-14)
 **Contests Completed:** 7
 **Problems Solved:** 99 / 200 goal
 
