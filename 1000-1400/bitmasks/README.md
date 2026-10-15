@@ -21,7 +21,7 @@ Treat an integer as a set of bits. AND, OR, XOR each have properties you can exp
 - Bits are indexed from 0.
 
 ## Plan
-1. [ ] [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) (1100)
+1. [x] [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) (1100)
 2. [ ] [2085C Serval and The Formula](https://codeforces.com/problemset/problem/2085/C) (1200)
 3. [ ] [2020C Bitwise Balancing](https://codeforces.com/problemset/problem/2020/C) (1300)
 4. [ ] [1988C Increasing Sequence with Fixed OR](https://codeforces.com/problemset/problem/1988/C) (1300)
@@ -31,3 +31,4 @@ Treat an integer as a set of bits. AND, OR, XOR each have properties you can exp
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-14 | [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) | not recorded | accepted with hints | a_i must hold every bit of both neighbours in b, so a_i = b_{i-1} OR b_i (first try used AND); then verify by recomputing all a_i & a_{i+1} instead of reasoning about validity |

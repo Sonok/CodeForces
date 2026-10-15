@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 96 / 200** as of 2026-10-12.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 99 / 200** as of 2026-10-14.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -23,15 +23,15 @@ standards, so they don't count. Ratings listed are approximate.
 |---|---|---|---|
 | 1 | Greedy | in progress | [greedy](greedy/) |
 | 1 | Two pointers / sliding window | not started | [two_pointers](two_pointers/) |
-| 1 | Binary search (on answer) | not started | [binary_search](binary_search/) |
+| 1 | Binary search (on answer) | in progress | [binary_search](binary_search/) |
 | 1 | Prefix sums / difference arrays | in progress | [prefix_sums](prefix_sums/) |
 | 1 | Constructive | not started | [constructive](constructive/) |
-| 1 | Number theory | not started | [number_theory](number_theory/) |
+| 1 | Number theory | in progress | [number_theory](number_theory/) |
 | 2 | DP | not started | [dp](dp/) |
 | 2 | Graphs: BFS / DFS / grids | in progress | [graphs](graphs/) |
 | 2 | DSU | in progress | [dsu](dsu/) |
 | 2 | Trees | not started | [trees](trees/) |
-| 2 | Bitmasks | not started | [bitmasks](bitmasks/) |
+| 2 | Bitmasks | in progress | [bitmasks](bitmasks/) |
 | 2 | Strings | not started | [strings](strings/) |
 | 2 | Games | not started | [games](games/) |
 
@@ -42,16 +42,16 @@ Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separat
 - [Div 3 and Div 4 contest list](https://codeforces.com/contests/page/1) — virtual-participate a 2024+ round when you want a timed set.
 - [Codeforces problem ratings by tag](https://codeforces.com/problemset?tags=greedy,1000-1400) — swap the tag for the skill you're on.
 
+## Helpers
+- `claude` agents in `../.claude/agents/`: `coach` gives graded hints without the answer,
+  `stress-test` brute-forces my solution on random inputs and finds a failing case.
+- Compile: `g++ -std=gnu++17 -O2 X.cpp -o main && ./main` (no `bits/stdc++.h` on Mac clang).
+
 ## Contest log
 
 | Date | Problem | Rating | Skill | Time | Result | One-line lesson |
 |---|---|---|---|---|---|---|
 | 2026-09-30 | [1921D Very Different Array](https://codeforces.com/problemset/problem/1921/D) | 1200 | greedy | 60+ min | solved with hints | per-element greedy steals; sort both, try every split k with prefix sums |
-
-## Helpers
-- `claude` agents in `../.claude/agents/`: `coach` gives graded hints without the answer,
-  `stress-test` brute-forces my solution on random inputs and finds a failing case.
-- Compile: `g++ -std=gnu++17 -O2 X.cpp -o main && ./main` (no `bits/stdc++.h` on Mac clang).
 | 2026-10-01 | [1921C Sending Messages](https://codeforces.com/problemset/problem/1921/C) | 1000 | greedy | 50+ min | accepted with hints | algorithm fast, lost 40 min to misreading start time, int overflow, then float precision |
 | 2026-10-09 | [1996C Sort](https://codeforces.com/problemset/problem/1996/C) | 1300 | prefix_sums | ~75 min | accepted with hints | range only matters as a multiset of letters; 26 prefix-count arrays, carry every row forward each step |
 | 2026-10-10 | [1931D Divisible Pairs](https://codeforces.com/problemset/problem/1931/D) | 1200 | number_theory | not recorded | accepted | reduce each element to its residue pair, then count partners with a map in one pass |
@@ -60,3 +60,4 @@ Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separat
 | 2026-10-12 | [2008D Sakurako's Hobby](https://codeforces.com/problemset/problem/2008/D) | 1100 | dsu | not recorded | accepted with hints | permutation = disjoint cycles (in = out = 1); per-set data lives at the DSU root, never walk the parent chain to collect it |
 | 2026-10-14 | [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) | 1100 | binary_search | not recorded | accepted, idea found alone | overflow means promote to `long long` (`1LL * x * y`), never switch to `double`; floor of an exact integer in double truncates to n-1 |
 | 2026-10-14 | [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) | 1200 | number_theory | not recorded | accepted with hints | cannot divide mod a composite m; when removals are the obstacle, process the operations in reverse so they become insertions |
+| 2026-10-14 | [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) | 1100 | bitmasks | not recorded | accepted with hints | "must contain all bits of both" is OR, not AND; build the candidate, then verify it by recomputing b directly |
