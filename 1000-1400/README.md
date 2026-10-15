@@ -10,32 +10,38 @@ Problem count goal: 200 solved on Codeforces (per profile, not file count). **Pr
   named `<contest><letter>_<Name>.cpp`, statement in a comment on top.
 - Each skill folder has a README: what the skill is, the patterns and formulas, the
   pitfalls, a plan of problems in order, and a log of what I solved and what went wrong.
-- After each problem, log it in the skill README and in the table below.
+- After each problem, log it in the skill README and in the table below, and nudge that skill's row in the estimates table.
 - The skill with the most misses or slowest times becomes the next study block.
 - A skill is done when I solve a 1400 of that type in under 30 minutes without hints.
 
 Problems are from 2024 and later only (contest id 1917+). Older problems are under-rated by today's
 standards, so they don't count. Ratings listed are approximate.
 
-## Skills
+## Skill estimates
 
-| Tier | Skill | Status | Folder |
-|---|---|---|---|
-| 1 | Greedy | in progress | [greedy](greedy/) |
-| 1 | Two pointers / sliding window | not started | [two_pointers](two_pointers/) |
-| 1 | Binary search (on answer) | in progress | [binary_search](binary_search/) |
-| 1 | Prefix sums / difference arrays | in progress | [prefix_sums](prefix_sums/) |
-| 1 | Constructive | not started | [constructive](constructive/) |
-| 1 | Number theory | in progress | [number_theory](number_theory/) |
-| 2 | DP | not started | [dp](dp/) |
-| 2 | Graphs: BFS / DFS / grids | in progress | [graphs](graphs/) |
-| 2 | DSU | in progress | [dsu](dsu/) |
-| 2 | Trees | not started | [trees](trees/) |
-| 2 | Bitmasks | in progress | [bitmasks](bitmasks/) |
-| 2 | Strings | not started | [strings](strings/) |
-| 2 | Games | not started | [games](games/) |
+Rough rating per skill, updated after every solve. "Solo" means the idea was found without hints.
+Most rows rest on one or two problems, so treat them as a first guess, not a verdict.
+Overall rating ~1150 as of 2026-10-14.
 
-Tier 1 is what Div 3 C and D test. Tier 2 is what E and F test, and what separates 1300 from 1400.
+| Skill | Solved | Est. | Confidence | Evidence |
+|---|---|---|---|---|
+| [greedy](greedy/) | 2 | ~1100 | low | 1200 and 1000, both with hints, 50-60 min each. Finds the greedy, loses time to implementation slips |
+| [prefix_sums](prefix_sums/) | 2 | ~1200 | medium | 1300 with hints in 75 min, 1200 solo first try. Strongest area so far |
+| [number_theory](number_theory/) | 2 | ~1150 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing) |
+| [binary_search](binary_search/) | 1 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
+| [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
+| [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
+| [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
+| [two_pointers](two_pointers/) | 0 | ? | none | |
+| [constructive](constructive/) | 0 | ? | none | |
+| [dp](dp/) | 0 | ? | none | |
+| [trees](trees/) | 0 | ? | none | |
+| [strings](strings/) | 0 | ? | none | |
+| [games](games/) | 0 | ? | none | |
+
+Pattern across all of it: ideas at 1100-1200 come either solo or after one nudge, so the ceiling is not
+the algorithm yet. Time goes to implementation: off-by-ones, overflow, wrong operator, stale loop
+variables. Recording the time on every solve is the single biggest gap in this table.
 
 ## Where to find problems
 - [Codeforces problemset filtered 1000–1400](https://codeforces.com/problemset?tags=1000-1400) — sort by contest id descending and only take 1917+.
