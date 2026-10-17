@@ -112,9 +112,6 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -123,7 +120,38 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        string s; cin >> s;
+        int n = s.size();
+        int count = 0;
+        for(int i = 0; i < n-3; i++) {
+            if (s.compare(i, 4, "1100") == 0) {
+                count++;
+            }
+        }
+        int q; cin >> q;
+        while(q--) {
+            int i, v;
+            cin >> i >> v;
+            i--; // 0 index it 
+            char letter = v + '0';
+            if (letter == s[i]) {
+                cout << (count > 0 ? "Yes\n" : "No\n");
+                continue; // no need to do checks 
+            }
+            for(int index = i; index >= i-3 && index >= 0; index--) {
+                if (s.compare(index, 4, "1100") == 0) {
+                    count--;
+                }
+            }
+            s[i] = letter;
+            for(int index = i; index >= i-3 && index >= 0; index--) {
+                if (s.compare(index, 4, "1100") == 0) {
+                    count++;
+                }
+            }
+
+            cout << (count > 0 ? "Yes\n" : "No\n");
+        }
     }
     return 0;
 }

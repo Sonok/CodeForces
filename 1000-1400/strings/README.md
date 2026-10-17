@@ -1,6 +1,6 @@
 # Strings
 
-Status: not started
+Status: started 2026-10-16
 
 ## What it is
 At 1000 to 1400 string problems are counting and structure, not algorithms. Frequency arrays, palindromes, two pointers, prefix counts, and simulation.
@@ -25,10 +25,11 @@ At 1000 to 1400 string problems are counting and structure, not algorithms. Freq
 1. [ ] [2000C Numeric String Template](https://codeforces.com/problemset/problem/2000/C) (1000)
 2. [ ] [2114B Not Quite a Palindromic String](https://codeforces.com/problemset/problem/2114/B) (1000)
 3. [ ] [1950E Nearly Shortest Repeating Substring](https://codeforces.com/problemset/problem/1950/E) (1100)
-4. [ ] [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) (1100)
+4. [x] [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) (1100)
 5. [ ] [2050D Digital string maximization](https://codeforces.com/problemset/problem/2050/D) (1300, also greedy)
 
 ## Log
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-16 | [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) | 40-50 min | accepted with a hint | Rescanning the whole string per query is O(nq). Needed a nudge that one changed character can only affect the 4 windows that contain it: subtract those windows before the write, add them back after, keep a running count |

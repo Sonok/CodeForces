@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 99 / 200** as of 2026-10-14.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 100 / 200** as of 2026-10-16.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -36,7 +36,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [constructive](constructive/) | 0 | ? | none | |
 | [dp](dp/) | 0 | ? | none | |
 | [trees](trees/) | 0 | ? | none | |
-| [strings](strings/) | 0 | ? | none | |
+| [strings](strings/) | 1 | ~1050 | low | 1100 with a hint (local recount around a point update), 40-50 min |
 | [games](games/) | 0 | ? | none | |
 
 Pattern across all of it: ideas at 1100-1200 come either solo or after one nudge, so the ceiling is not
@@ -67,3 +67,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-10-14 | [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) | 1100 | binary_search | not recorded | accepted, idea found alone | overflow means promote to `long long` (`1LL * x * y`), never switch to `double`; floor of an exact integer in double truncates to n-1 |
 | 2026-10-14 | [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) | 1200 | number_theory | not recorded | accepted with hints | cannot divide mod a composite m; when removals are the obstacle, process the operations in reverse so they become insertions |
 | 2026-10-14 | [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) | 1100 | bitmasks | not recorded | accepted with hints | "must contain all bits of both" is OR, not AND; build the candidate, then verify it by recomputing b directly |
+| 2026-10-16 | [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) | 1100 | strings | 40-50 min | accepted with a hint | a point update only changes the windows that contain it; subtract those before the write, add them after, answer from a running count |
