@@ -23,7 +23,7 @@ Output any valid object (array, permutation, string) that meets the conditions, 
 ## Plan
 1. [ ] [1968C Assembly via Remainders](https://codeforces.com/problemset/problem/1968/C) (1000)
 2. [ ] [2032B Medians](https://codeforces.com/problemset/problem/2032/B) (1000)
-3. [ ] [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) (1100)
+3. [x] [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) (1100)
 4. [ ] [1990B Array Craft](https://codeforces.com/problemset/problem/1990/B) (1100)
 5. [ ] [1974D Ingenuity-2](https://codeforces.com/problemset/problem/1974/D) (1300)
 6. [ ] [2035C Alya and Permutation](https://codeforces.com/problemset/problem/2035/C) (1300)
@@ -33,3 +33,4 @@ Output any valid object (array, permutation, string) that meets the conditions, 
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-18 | [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) | not recorded | accepted, idea found alone | parity split (odd block, even block) with one odd+even seam that sums to 9; only slip was n=2, where 1+2=3 is prime, so test the smallest n by hand before special-casing it |

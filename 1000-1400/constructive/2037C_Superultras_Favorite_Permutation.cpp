@@ -80,7 +80,30 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        // odd -> odd -> odd -> even -> even 
+        // wait till odd + even is composite 
+        // n = 2: 1, 2
+        // n = 3: 1, 3, 2 doesn't work
+        // n = 4: 1, 3, 4, 2 doesn't work 
+
+        // n = 5: 1 3 5 4 2
+        // n = 6: 1 3 5 4 2 6 
+        // confimed match 5 and 4 ur set 
+        if (n <= 4) {
+            cout << -1 << "\n";
+            continue;
+        }
+        for(int i = 1; i <= n; i += 2) {
+            if (i == 5) continue;
+            cout << i << " ";
+        }
+        cout << "5 4 ";
+        for(int i = 2; i <= n; i += 2) {
+            if (i == 4) continue;
+            cout << i << " ";
+        }
+        cout << "\n";
     }
     return 0;
 }
