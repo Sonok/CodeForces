@@ -1,6 +1,6 @@
 # Two pointers / sliding window
 
-Status: not started
+Status: in progress
 
 ## What it is
 Two indices that only ever move forward. Total work O(n) because each pointer moves at most n times.
@@ -25,7 +25,7 @@ Two indices that only ever move forward. Total work O(n) because each pointer mo
 ## Plan
 1. [ ] [1968B Prefiquence](https://codeforces.com/problemset/problem/1968/B) (900)
 2. [ ] [2051D Counting Pairs](https://codeforces.com/problemset/problem/2051/D) (1200) — tags seen 2026-10-10, not blind anymore
-3. [ ] [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300)
+3. [x] [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300)
 4. [ ] [2025C New Game](https://codeforces.com/problemset/problem/2025/C) (1300)
 5. [ ] [2032C Trinity](https://codeforces.com/problemset/problem/2032/C) (1400)
 
@@ -33,3 +33,4 @@ Two indices that only ever move forward. Total work O(n) because each pointer mo
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-10-19 | [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300) | 35 min | accepted, idea found alone | misread the statement: thought '.' wiped the values, it only bans the index as an endpoint, so inner pairs still get counted by an outer pair; the hint was a re-read, not an idea. Then outermost L with outermost R, prefix sums, walk inward |

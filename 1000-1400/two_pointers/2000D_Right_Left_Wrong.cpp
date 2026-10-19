@@ -108,7 +108,30 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        vector<int> v(n);
+        for(int i=0; i<n; i++) cin >> v[i];
+        string s; cin >> s;
+        
+        int l = 0; int r = n-1;
+        ll total = 0;
+
+        vector<ll> prefix;
+        prefix.push_back(v[0]);
+        for(int i = 1; i < n; i++) {
+          prefix.push_back(prefix[i-1] + v[i]);
+        }
+
+        while(l <= r) { // <= bc when equal sum
+          if(s[l] == 'L' && s[r] == 'R') {
+            if(l == 0)  total += prefix[r];
+            else total += prefix[r] - prefix[l-1];
+            l++; r--;
+          }
+          else if(s[l] == 'L') r--;
+          else l++;
+        }
+        cout << total << "\n";
     }
     return 0;
 }

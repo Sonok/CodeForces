@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 101 / 200** as of 2026-10-18.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 102 / 200** as of 2026-10-19.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -69,3 +69,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-10-14 | [1991B AND Reconstruction](https://codeforces.com/problemset/problem/1991/B) | 1100 | bitmasks | not recorded | accepted with hints | "must contain all bits of both" is OR, not AND; build the candidate, then verify it by recomputing b directly |
 | 2026-10-16 | [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) | 1100 | strings | 40-50 min | accepted with a hint | a point update only changes the windows that contain it; subtract those before the write, add them after, answer from a running count |
 | 2026-10-18 | [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) | 1100 | constructive | not recorded | accepted, idea found alone | split by parity, one odd+even seam summing to a composite; test the smallest n by hand (1+2=3 is prime) before special-casing it |
+| 2026-10-19 | [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) | 1300 | two_pointers | 35 min | accepted, statement hint only | the only block was reading: '.' bans an index as an endpoint, it does not zero the value, so nested pairs count twice; when a sample looks impossible, re-read what the operation forbids before looking for a trick |
