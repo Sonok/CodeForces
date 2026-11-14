@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 102 / 200** as of 2026-10-19.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 103 / 200** as of 2026-11-13.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -25,7 +25,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 
 | Skill | Solved | Est. | Confidence | Evidence |
 |---|---|---|---|---|
-| [greedy](greedy/) | 2 | ~1100 | low | 1200 and 1000, both with hints, 50-60 min each. Finds the greedy, loses time to implementation slips |
+| [greedy](greedy/) | 3 | ~1100 | low | 1200 and 1000, both with hints, 50-60 min each. Finds the greedy, loses time to implementation slips |
 | [prefix_sums](prefix_sums/) | 2 | ~1200 | medium | 1300 with hints in 75 min, 1200 solo first try. Strongest area so far |
 | [number_theory](number_theory/) | 2 | ~1150 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing) |
 | [binary_search](binary_search/) | 1 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
@@ -70,3 +70,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-10-16 | [2036C Anya and 1100](https://codeforces.com/problemset/problem/2036/C) | 1100 | strings | 40-50 min | accepted with a hint | a point update only changes the windows that contain it; subtract those before the write, add them after, answer from a running count |
 | 2026-10-18 | [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) | 1100 | constructive | not recorded | accepted, idea found alone | split by parity, one odd+even seam summing to a composite; test the smallest n by hand (1+2=3 is prime) before special-casing it |
 | 2026-10-19 | [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) | 1300 | two_pointers | 35 min | accepted, statement hint only | the only block was reading: '.' bans an index as an endpoint, it does not zero the value, so nested pairs count twice; when a sample looks impossible, re-read what the operation forbids before looking for a trick |
+| 2026-11-13 | [1955C Inhabitant of the Deep Sea](https://codeforces.com/problemset/problem/1955/C) | 1300 | greedy | ~87 min | accepted with 4 hints | growing special cases mean you are simulating something that should be counted; when two processes never touch each other, only their totals matter, so give each end its own budget and handle the single ship where they meet |
