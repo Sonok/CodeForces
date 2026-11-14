@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 105 / 200** as of 2026-11-14.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 106 / 200** as of 2026-11-14.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -28,7 +28,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [greedy](greedy/) | 4 | ~1100 | low | 1200 and 1000, both with hints, 50-60 min each. Finds the greedy, loses time to implementation slips |
 | [prefix_sums](prefix_sums/) | 2 | ~1200 | medium | 1300 with hints in 75 min, 1200 solo first try. Strongest area so far |
 | [number_theory](number_theory/) | 2 | ~1150 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing) |
-| [binary_search](binary_search/) | 1 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
+| [binary_search](binary_search/) | 2 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
@@ -73,3 +73,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-13 | [1955C Inhabitant of the Deep Sea](https://codeforces.com/problemset/problem/1955/C) | 1300 | greedy | ~87 min | accepted with 4 hints | growing special cases mean you are simulating something that should be counted; when two processes never touch each other, only their totals matter, so give each end its own budget and handle the single ship where they meet |
 | 2026-11-14 | [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) | 1200 | dp | ~1 hour | accepted with several hints | don't branch on starting values that change during the process; find the two things that can limit the answer (own height, neighbour's finish + 1) and take the max |
 | 2026-11-14 | [2022B Kar Salesman](https://codeforces.com/problemset/problem/2022/B) | 1300 | greedy | ~45 min | accepted after seeing the solution | when choices are unrestricted and the numbers are too big to construct anything, list every lower bound, check their max against all samples, and bet on it; keep integer math integer |
+| 2026-11-14 | [2009E Klee's SUPER DUPER LARGE Array!!!](https://codeforces.com/problemset/problem/2009/E) | 1400 | binary_search | ~73 min | accepted, idea alone, bugs with hints | n = 1e9 means no array can exist, use the closed-form sum; a binary search needs a test that flips somewhere in the range, and a decided direction for each outcome |

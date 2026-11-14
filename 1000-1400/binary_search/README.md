@@ -31,9 +31,11 @@ If "is X achievable?" is monotone in X (true for all X up to some point, then fa
 3. [ ] [2020B Brightness Begins](https://codeforces.com/problemset/problem/2020/B) (1200)
 4. [ ] [2093E Min Max MEX](https://codeforces.com/problemset/problem/2093/E) (1300)
 5. [ ] [1985F Final Boss](https://codeforces.com/problemset/problem/1985/F) (1500)
+6. [x] [2009E Klee's SUPER DUPER LARGE Array!!!](https://codeforces.com/problemset/problem/2009/E) (1400) — binary search on prefix length with a closed-form sum
 
 ## Log
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
 | 2026-10-14 | [1971E Find the Car](https://codeforces.com/problemset/problem/1971/E) | not recorded | accepted, idea found alone | lower_bound on the checkpoint array was right first try; lost the rest to escaping int overflow with `double` instead of `1LL *` (truncation of 92.999... gave 92) |
+| 2026-11-14 | [2009E Klee's SUPER DUPER LARGE Array!!!](https://codeforces.com/problemset/problem/2009/E) (1400) | ~73 min | accepted, idea found alone, bugs fixed with hints | Idea was right from the first attempt: prefix sums cross half the total, check around the crossing. Lost the time to implementation. Built the array and prefix vector for n = 1e9 (8 GB, runtime error) instead of using the closed form. Then mixed index and count in the sum: prefix ending at index mid has mid + 1 elements and last element k + mid. Then the branch test (lhs >= 0) never flipped, and after fixing it the two branches were swapped. Check n against memory first; test the formula at mid = 0; say out loud which way to move when the left side is too big. |
