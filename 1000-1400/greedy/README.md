@@ -1,6 +1,6 @@
 # Greedy
 
-Status: in progress (3 of 8 done)
+Status: in progress (4 of 9 done)
 
 ## What it is
 Make the locally best choice at each step and prove nothing better exists.
@@ -30,6 +30,7 @@ At 1000 to 1400 nearly every greedy is "sort by the right key, then sweep once".
 6. [ ] [2050D Digital string maximization](https://codeforces.com/problemset/problem/2050/D) (1300)
 7. [ ] [2037D Sharky Surfing](https://codeforces.com/problemset/problem/2037/D) (1500, stretch: greedy + priority queue)
 8. [x] [1955C Inhabitant of the Deep Sea](https://codeforces.com/problemset/problem/1955/C) (1300) — independent ends, count totals instead of simulating
+9. [x] [2022B Kar Salesman](https://codeforces.com/problemset/problem/2022/B) (1300) — answer is the max of two lower bounds
 
 ## Log
 
@@ -38,3 +39,4 @@ At 1000 to 1400 nearly every greedy is "sort by the right key, then sweep once".
 | 2026-09-30 | 1921D Very Different Array | 60+ min | solved with hints | first idea was per-element pick-the-better-end, which steals. Had the two-prefix idea early, bug was which b index each group used. |
 | 2026-10-01 | 1921C Sending Messages | 50+ min | accepted, with hints | Greedy was right in 10 min. Lost 40 min to two non-algorithm bugs: missed that the phone is on from moment 0 so the first gap is [0, m1], then int overflow on a*gap, then tried to dodge overflow with float which lost precision. Read the statement twice, long long on any product of inputs. |
 | 2026-11-13 | 1955C Inhabitant of the Deep Sea | ~87 min | accepted, with 4 hints (1 WA, 1 RE) | Simulated the alternation pair by pair and drowned in cases (5 -> 3,2). Saw alone that left gets ceil(k/2) and right gets floor(k/2), but did not trust that the totals are all that matter. Left attacks only touch the left end, right only the right, so walk each side on its own budget. The sides only mix on the one ship where the walks meet: carry the partial damage over and cap the answer at n. Also k up to 1e15 needs long long. |
+| 2026-11-14 | 2022B Kar Salesman | ~45 min | accepted after seeing the full solution | Tried heaps to build the assignment. Found both lower bounds alone once asked what forces the count up (biggest model; ceil(total / x)) but read them as a binary search range, not as the answer. The gap is trusting that the larger bound is always reachable: deal cars model by model around a circle of m customers. Evidence in a contest: bound matches every sample, cannot build a tiny counterexample, constraints too big to construct anything. Also ceil returns double, so max(double, ll) will not compile; use (a + b - 1) / b. |
