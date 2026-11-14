@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 103 / 200** as of 2026-11-13.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 104 / 200** as of 2026-11-14.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -34,7 +34,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
 | [two_pointers](two_pointers/) | 0 | ? | none | |
 | [constructive](constructive/) | 1 | ~1100 | low | 1100 solo, construction found fast, missed the n=2 edge case |
-| [dp](dp/) | 0 | ? | none | |
+| [dp](dp/) | 1 | ? | low | one 1200 with several hints; finds the dp direction alone, transition needed help |
 | [trees](trees/) | 0 | ? | none | |
 | [strings](strings/) | 1 | ~1050 | low | 1100 with a hint (local recount around a point update), 40-50 min |
 | [games](games/) | 0 | ? | none | |
@@ -71,3 +71,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-10-18 | [2037C Superultra's Favorite Permutation](https://codeforces.com/problemset/problem/2037/C) | 1100 | constructive | not recorded | accepted, idea found alone | split by parity, one odd+even seam summing to a composite; test the smallest n by hand (1+2=3 is prime) before special-casing it |
 | 2026-10-19 | [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) | 1300 | two_pointers | 35 min | accepted, statement hint only | the only block was reading: '.' bans an index as an endpoint, it does not zero the value, so nested pairs count twice; when a sample looks impossible, re-read what the operation forbids before looking for a trick |
 | 2026-11-13 | [1955C Inhabitant of the Deep Sea](https://codeforces.com/problemset/problem/1955/C) | 1300 | greedy | ~87 min | accepted with 4 hints | growing special cases mean you are simulating something that should be counted; when two processes never touch each other, only their totals matter, so give each end its own budget and handle the single ship where they meet |
+| 2026-11-14 | [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) | 1200 | dp | not recorded | accepted with several hints | don't branch on starting values that change during the process; find the two things that can limit the answer (own height, neighbour's finish + 1) and take the max |

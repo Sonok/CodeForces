@@ -1,6 +1,6 @@
 # DP
 
-Status: not started
+Status: in progress (1 done)
 
 ## What it is
 Break the problem into states, each state's answer depends on smaller states. Write the state in one sentence, write the transition, write the base case, fill in order.
@@ -28,8 +28,10 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 3. [ ] [2033C Sakurako's Field Trip](https://codeforces.com/problemset/problem/2033/C) (1400)
 4. [ ] [2050E Three Strings](https://codeforces.com/problemset/problem/2050/E) (1500)
 5. [ ] [1941E Rudolf and k Bridges](https://codeforces.com/problemset/problem/1941/E) (1600, stretch)
+6. [x] [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) — finish time from the right, max of two lower bounds
 
 ## Log
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
+| 2026-11-14 | [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) | not recorded | accepted, with several hints | Right-to-left finish-time dp found alone, and the stuck case (neighbour's finish + 1) was right from the start. The slip was branching on starting heights h[i] vs h[i+1]: the neighbour's height keeps changing, only its finish time matters. A flower is either never held up (takes h[i]) or stuck behind its neighbour (takes dp[i+1] + 1); both are lower bounds, so dp[i] = max of the two, no branches. A hand trace with an error in it hid the bug, so trace slowly. |
