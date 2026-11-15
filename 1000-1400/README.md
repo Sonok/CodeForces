@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 106 / 200** as of 2026-11-14.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 107 / 200** as of 2026-11-15.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -32,7 +32,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
-| [two_pointers](two_pointers/) | 0 | ? | none | |
+| [two_pointers](two_pointers/) | 2 | ~1200 | low | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min, bug fixed with vague hints |
 | [constructive](constructive/) | 1 | ~1100 | low | 1100 solo, construction found fast, missed the n=2 edge case |
 | [dp](dp/) | 1 | ? | low | one 1200 with several hints; finds the dp direction alone, transition needed help |
 | [trees](trees/) | 0 | ? | none | |
@@ -74,3 +74,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-14 | [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) | 1200 | dp | ~1 hour | accepted with several hints | don't branch on starting values that change during the process; find the two things that can limit the answer (own height, neighbour's finish + 1) and take the max |
 | 2026-11-14 | [2022B Kar Salesman](https://codeforces.com/problemset/problem/2022/B) | 1300 | greedy | ~45 min | accepted after seeing the solution | when choices are unrestricted and the numbers are too big to construct anything, list every lower bound, check their max against all samples, and bet on it; keep integer math integer |
 | 2026-11-14 | [2009E Klee's SUPER DUPER LARGE Array!!!](https://codeforces.com/problemset/problem/2009/E) | 1400 | binary_search | ~73 min | accepted, idea alone, bugs with hints | n = 1e9 means no array can exist, use the closed-form sum; a binary search needs a test that flips somewhere in the range, and a decided direction for each outcome |
+| 2026-11-15 | [1982C Boring Day](https://codeforces.com/problemset/problem/1982/C) | 1200 | two_pointers | ~37 min | accepted, idea alone, bug with vague hints | when the greedy resets, ask if you can drop from the front instead; keep the window sum in one variable, a second copy goes stale on some exit path |

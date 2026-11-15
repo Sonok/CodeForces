@@ -28,9 +28,11 @@ Two indices that only ever move forward. Total work O(n) because each pointer mo
 3. [x] [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300)
 4. [ ] [2025C New Game](https://codeforces.com/problemset/problem/2025/C) (1300)
 5. [ ] [2032C Trinity](https://codeforces.com/problemset/problem/2032/C) (1400)
+6. [x] [1982C Boring Day](https://codeforces.com/problemset/problem/1982/C) (1200) — greedy window: take a round as soon as the sum fits, shrink from the left when it overshoots
 
 ## Log
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
 | 2026-10-19 | [2000D Right Left Wrong](https://codeforces.com/problemset/problem/2000/D) (1300) | 35 min | accepted, idea found alone | misread the statement: thought '.' wiped the values, it only bans the index as an endpoint, so inner pairs still get counted by an outer pair; the hint was a re-read, not an idea. Then outermost L with outermost R, prefix sums, walk inward |
+| 2026-11-15 | [1982C Boring Day](https://codeforces.com/problemset/problem/1982/C) (1200) | ~37 min | accepted, idea found alone, bug fixed with vague hints | First wrote the plain greedy (reset to 0 when the sum passes r), then saw alone that the front cards can be dropped instead, which is the window. All the lost time was one bug in three forms: the sum lived in two variables (`streak` and `newStreak`) and some exit path left `streak` stale. First the too-small path, then the path where a single card is above r and the `while` ends by its condition. Keep one running sum, and for every way out of the loop ask what each variable holds. |
