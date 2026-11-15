@@ -29,6 +29,7 @@ Divisors, gcd, lcm, primes, modular arithmetic, parity. Count something without 
 4. [x] [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) (1200)
 5. [ ] [2044E Insane Problem](https://codeforces.com/problemset/problem/2044/E) (1300)
 6. [ ] [1980D GCD-sequence](https://codeforces.com/problemset/problem/1980/D) (1600, stretch)
+7. [x] [1999E Triple Operations](https://codeforces.com/problemset/problem/1999/E) (1300) — base-3 digit counts, smallest number pays twice
 
 ## Log
 
@@ -36,3 +37,4 @@ Divisors, gcd, lcm, primes, modular arithmetic, parity. Count something without 
 |---|---|---|---|---|
 | 2026-10-10 | 1931D Divisible Pairs | not recorded | accepted | A pair works iff (a_i mod x, a_i mod y) and (a_j mod x, a_j mod y) have mod-y parts equal and mod-x parts summing to 0 mod x. One sweep with a map keyed by the residue pair: look up the partner key ((x - r) % x, s) before inserting. The `% x` on the partner handles r = 0. |
 | 2026-10-14 | [1932C LR-remainders](https://codeforces.com/problemset/problem/1932/C) | not recorded | accepted with hints | tried to factorize and divide out removed elements (CRT rabbit hole); no inverse mod composite m, so reverse the commands and only multiply. Survivor index = count of L in first n-1 commands |
+| 2026-11-15 | [1999E Triple Operations](https://codeforces.com/problemset/problem/1999/E) (1300) | ~55 min | accepted, idea found alone, 1 WA, hints only on the float bug | Idea came alone in about 20 min: an operation moves one base-3 digit, so zero the smallest number first (its digit count), which hands those digits to another number, then every number costs its own digit count; total = 2 * digits(l) + sum of digits(l+1..r). Wrong answer on test 1 although the sample passed locally: `floor(log(i) / log(3))` gave 3 for 81 on the judge. Floating point is not the same on two machines, so a local pass proves nothing. Rewrote alone to count digits with an integer loop and to add whole blocks of equal digit count (i up to the next power of 3) instead of looping over every number, which also removes the 1e4 * 2e5 loop. Still uses `pow(3, power)` cast to int, same family of risk: build powers by multiplying integers. |

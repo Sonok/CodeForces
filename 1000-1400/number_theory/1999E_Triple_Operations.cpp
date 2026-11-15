@@ -81,7 +81,27 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int l, r;
+        cin >> l >> r; 
+
+        int power = 1;
+        for(int k = 3; k <= l; k *= 3) power++;
+        ll total = 2 * power; // now we have a 0 at l 
+
+        int i = l+1; 
+        while (i <= r) {
+            int next_pow = pow(3,power);
+            // number from i to 3^pow - 1 is 3^pow - i 
+            if (next_pow > r) { // finished 
+                total += (r-i+1) * power;
+                break; // we are done 
+            }
+            total += (next_pow - i) * power;
+            i = next_pow;
+            power++; 
+
+        }
+        cout << total << "\n";
     }
     return 0;
 }
