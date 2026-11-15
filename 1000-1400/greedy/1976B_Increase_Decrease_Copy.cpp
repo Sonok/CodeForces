@@ -93,7 +93,36 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        vector<int> a(n);
+        vector<int> b(n+1);
+        for(int i = 0; i < n; i++) cin >> a[i];
+        for(int i = 0; i <= n; i++) cin >> b[i];
+
+        int last = b[n];
+        ll count = 0; 
+        bool one_move = false;
+        int closest_to_last = a[0];
+
+        for(int i = 0; i < n; i++) {
+            if (a[i] == last || b[i] == last || (a[i] <= last && last <= b[i]) ||(a[i] >= last && last >= b[i])) {
+                one_move = true;
+            }
+            count += abs(a[i] - b[i]);
+
+            if (abs(a[i] - last) < abs(closest_to_last - last)) {
+                closest_to_last = a[i];
+            }
+
+            if (abs(b[i] - last) < abs(closest_to_last - last)) {
+                closest_to_last = b[i];
+            }
+        }
+        if (!one_move) {
+            count += abs(last - closest_to_last);
+        }
+        count++;
+        cout << count << "\n";
     }
     return 0;
 }
