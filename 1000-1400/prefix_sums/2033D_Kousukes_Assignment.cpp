@@ -84,7 +84,34 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        vector<int> a(n);
+        for(int i = 0; i < n; i++) cin >> a[i];
+
+        vector<ll> prefix(n+1, 0);
+        map<ll, int> counter;
+
+        int count = 0;
+        int cutoff = 0;
+        // this is the cutoff index
+
+        for(int i = 1; i <= n; i++) {
+            prefix[i] = prefix[i-1] + a[i-1];
+            counter[prefix[i] - prefix[cutoff]]++;
+
+            // how to sucessfully find a beautfil segment
+            // when prefix[i] = 0 or prefix[i] = prefix[j] where j < i
+            // or when a[i-1] = 0 
+
+            if (prefix[i] == prefix[cutoff] || counter[prefix[i] - prefix[cutoff]] > 1 || a[i-1] == 0) {
+                counter.clear();
+                cutoff = i; // u have a valid segment
+                count++;
+            }
+
+        }
+        cout << count << "\n";
+
     }
     return 0;
 }
