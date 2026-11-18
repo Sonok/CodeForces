@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 113 / 200** as of 2026-11-18.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 114 / 200** as of 2026-11-18.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -32,7 +32,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
-| [two_pointers](two_pointers/) | 2 | ~1200 | low | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min, bug fixed with vague hints |
+| [two_pointers](two_pointers/) | 3 | ~1300 | medium | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min with vague hints on a bug, 1300 window solo with one tiny hint |
 | [constructive](constructive/) | 1 | ~1100 | low | 1100 solo, construction found fast, missed the n=2 edge case |
 | [dp](dp/) | 1 | ? | low | one 1200 with several hints; finds the dp direction alone, transition needed help |
 | [trees](trees/) | 0 | ? | none | |
@@ -81,3 +81,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-17 | [2014D Robert Hood and Mrs Hood](https://codeforces.com/problemset/problem/2014/D) | 1400 | prefix_sums | not recorded | accepted with many hints | to count intervals that overlap a window, count the ones that miss it: ended before it starts, or start after it ends; each is a prefix count over one endpoint, so hits = started by the last day - ended before the first day |
 | 2026-11-17 | [1974C Beautiful Triple Pairs](https://codeforces.com/problemset/problem/1974/C) | 1400 | number_theory (counting) | not recorded | accepted with 5 small hints, first submit | 'differ in exactly one position' splits into one case per position; in each case group by the two positions that must match, then count pairs with different values inside a group (seen * value as you go) |
 | 2026-11-18 | [1985E Secret Box](https://codeforces.com/problemset/problem/1985/E) | 1200 | number_theory | not recorded | accepted, idea found alone, nudges on 3 slips | fix two sides and the third is forced (k / (i*j)), so two loops are enough; a length-a piece fits in length-x in x - a + 1 places, not x - a; reread a condition letter by letter (y for j) |
+| 2026-11-18 | [2025C New Game](https://codeforces.com/problemset/problem/2025/C) | 1300 | two_pointers | not recorded | accepted, idea found alone, 1 tiny hint | order in the deck does not matter, so sort; the answer is the longest window of the sorted array with no gap above 1 and at most k distinct values; every while loop needs its variable to move (forgot i = j) |
