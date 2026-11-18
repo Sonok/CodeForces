@@ -109,7 +109,34 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+		// eveery 3 is differnt 
+		int n; cin >> n;
+		vector<int> a(n);
+		for(int i = 0; i<n;i++) cin>>a[i];
+
+		ll total = 0;
+		map<pair<int, int>, map<int, int>> one;
+		map<pair<int, int>, map<int, int>> two;
+		map<pair<int, int>, map<int, int>> three;
+
+		for (int i = 0; i <= n-3; i++) {
+			one[{a[i], a[i+1]}][a[i+2]]++;
+			two[{a[i], a[i+2]}][a[i+1]]++;
+			three[{a[i+1], a[i+2]}][a[i]]++;
+		}
+		
+		for (const auto *group : {&one, &two, &three}) {
+			for (const auto& [pi, mp] : *group) {
+				ll count = 0;
+				ll seen = 0;
+				for (const auto& [key, value] : mp) {
+					count += seen * value; // same thing n c 2 it's calm
+					seen += value;
+				}
+				total += count;
+			}
+		}
+		cout << total << "\n";
     }
     return 0;
 }

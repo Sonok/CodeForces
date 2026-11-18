@@ -104,9 +104,7 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -115,7 +113,53 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n, d, k;
+        cin >> n >> d >> k;
+        // how to efficently calcualte how many groups in time period d? 
+        // this is O(n) operation to see [m, m+d] minium [c, c+d] maximum
+        // with [(l_i, r_i)] take this sort by end time r_i wants to intersect 
+        // r_i >= m but and r_i <= m+d  in the group 
+        vector<pair<int, int>> jobs(n);
+        for(int i = 0; i < k; i++) cin >> jobs[i].first >> jobs[i].second;
+
+        vector<int> begin(n+1, 0); // day that corresponds with how many 
+        vector<int> finish(n+1, 0); 
+
+        // question is how many jobs end between n and n+d
+        // that's count if n is valid chose 
+
+        for (const auto &[start, end] : jobs) {
+            begin[start]++; 
+            finish[end]++;
+        }
+
+        for(int i = 1; i <= n; i++) { 
+            begin[i] += begin[i-1]; 
+            finish[i] += finish[i-1]; // make both cummulative 
+        }
+
+        // begin counts everything that started at point i or before  si 
+        // end count everything that end at point i or before 
+
+        // at each moment i we want to excludes everything that ends before i-1 (finish[i-1])
+        // and excludes stuff that starts i+1 after so that (k-begin[i])
+        vector<int> intersection(n+1, 0);
+        for (int i = 1; i <= n-d+1; i++) {
+            intersection[i] = -finish[i-1] + begin[i+d-1];
+        }
+        
+        pair<int, int> best = {0, -1};
+        pair<int, int> worst = {0, k+1};
+
+        for (int i = 1; i <= n-d+1; i++) {
+            if (intersection[i] > best.second) {
+                best = {i, intersection[i]};
+            }
+            if (intersection[i] < worst.second) {
+                worst = {i, intersection[i]};
+            }
+        }
+        cout << best.first << " " << worst.first << "\n";
     }
     return 0;
 }
