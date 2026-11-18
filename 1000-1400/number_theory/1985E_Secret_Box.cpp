@@ -92,8 +92,31 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
+// 4 3 1 6 -> 3, 2, 1 2*2 = 4 + 2,3,1 2 = 6
+// so we have to go through all the canidates
+// use long long sides are too long k = 8 * 10^9 max
+// what does that mean? 
+
+ll solve(ll x, ll y, ll z, ll k) {
+    if (x * y * z < k) {
+        return 0;
+    }
+
+    if (x * y * z == k) {
+        return 1; 
+    }
+
+    ll best = 0; 
+    for (int i = 1; i <= x; i++) {
+        if (k % i) continue;
+        ll prod = k / i;
+        for (int j = 1; j <= y; j++) {
+            if(prod % j == 0 and prod / j <= z) {
+                best = max(best, (x-i+1) * (y-j+1) * (z-prod/j+1));
+            }
+        }
+    }
+    return best;
 }
 
 int main() {
@@ -103,7 +126,10 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        ll x, y, z, k; 
+        cin >> x >> y >> z >> k;
+
+        cout << solve(x, y, z, k) << "\n";
     }
     return 0;
 }

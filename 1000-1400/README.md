@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 112 / 200** as of 2026-11-17.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 113 / 200** as of 2026-11-18.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -27,7 +27,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 |---|---|---|---|---|
 | [greedy](greedy/) | 5 | ~1150 | low | 1200 and 1000 with hints at 50-60 min, two 1300s with heavy help, then a 1200 solo with no hints. Finds the greedy, loses time to implementation slips |
 | [prefix_sums](prefix_sums/) | 4 | ~1300 | medium | 1300 with hints in 75 min, 1200 solo first try, 1300 solo with no hints in 38 min, 1400 needed about ten hints. Solid at 1300, not yet at 1400 |
-| [number_theory](number_theory/) | 4 | ~1200 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints |
+| [number_theory](number_theory/) | 5 | ~1200 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints, 1200 divisor brute force solo with nudges on three slips |
 | [binary_search](binary_search/) | 2 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
@@ -80,3 +80,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-16 | [2033D Kousuke's Assignment](https://codeforces.com/problemset/problem/2033/D) | 1300 | prefix_sums | 38 min | accepted, idea found alone, no hints | a zero-sum segment is a repeated prefix sum; cut at the first repeat and forget everything before the cut, since the earliest finish leaves the most room |
 | 2026-11-17 | [2014D Robert Hood and Mrs Hood](https://codeforces.com/problemset/problem/2014/D) | 1400 | prefix_sums | not recorded | accepted with many hints | to count intervals that overlap a window, count the ones that miss it: ended before it starts, or start after it ends; each is a prefix count over one endpoint, so hits = started by the last day - ended before the first day |
 | 2026-11-17 | [1974C Beautiful Triple Pairs](https://codeforces.com/problemset/problem/1974/C) | 1400 | number_theory (counting) | not recorded | accepted with 5 small hints, first submit | 'differ in exactly one position' splits into one case per position; in each case group by the two positions that must match, then count pairs with different values inside a group (seen * value as you go) |
+| 2026-11-18 | [1985E Secret Box](https://codeforces.com/problemset/problem/1985/E) | 1200 | number_theory | not recorded | accepted, idea found alone, nudges on 3 slips | fix two sides and the third is forced (k / (i*j)), so two loops are enough; a length-a piece fits in length-x in x - a + 1 places, not x - a; reread a condition letter by letter (y for j) |
