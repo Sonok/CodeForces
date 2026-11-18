@@ -29,6 +29,7 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 4. [ ] [2050E Three Strings](https://codeforces.com/problemset/problem/2050/E) (1500)
 5. [ ] [1941E Rudolf and k Bridges](https://codeforces.com/problemset/problem/1941/E) (1600, stretch)
 6. [x] [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) — finish time from the right, max of two lower bounds
+7. [ ] [1992D Test of Love](https://codeforces.com/problemset/problem/1992/D) (1200) — tags seen 2026-11-18 (dp, greedy), not blind anymore; file is set up in this folder
 
 ## Log
 
