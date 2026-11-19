@@ -91,9 +91,7 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -102,7 +100,52 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+		int n; cin >> n;
+		vector<int> a(n); vector<int> b(n);
+		for(int i = 0; i < n; i++) cin >> a[i];
+		for(int i = 0; i < n; i++) cin >> b[i];
+
+		// chose partition 1, partion 2 
+		// find the maximize the min (sum a[partion 1], sum b[partion 2])	
+
+		// states are seperate from each other what u chose in state i 
+		// has no impact in state i+1 
+
+		// 9 cases. 1-1 pick the lower one. if 1-0 chose a+1
+		// if 0-1 chose b+1, if 0-0 doesn't matter of 1, -1
+		// if a+1 < b-1 then pick adding 1 to a. else -1 to b 
+		int A = 0;
+		int B = 0;
+		int one = 0;
+		int minusOne = 0;
+
+		for(int i = 0; i < n; i++) {
+			if (a[i] == 1 && (b[i] == 0 || b[i] == -1)) A++;
+			if (b[i] == 1 && (a[i] == 0 || a[i] == -1)) B++; 
+			// one of the values being 0 and the other being -1 is a skip
+			// skip a[i]=b[i] = 0
+			if(a[i] == b[i] ) {
+				if(a[i] == 1) one++;
+				if(a[i] == -1) minusOne++;
+			} 
+
+		}
+
+		// A, B and u have a tie -> if 
+		while(one) {
+			if (A > B) B++;
+			else A++;
+			one--;
+		}
+
+		while(minusOne) {
+			if (A > B) A--;
+			else B--;
+			minusOne--;
+		}
+
+
+		cout << min(A,B) << "\n";
     }
     return 0;
 }
