@@ -102,7 +102,37 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        vector<pair<int, int>> vec(n);
+        set<pair<int, int>> s;
+        int zeroLine = 0;
+        int oneLine = 0;
+        for(int i = 0; i < n; i++) {
+            cin >> vec[i].first >> vec[i].second;
+            s.emplace(vec[i]);
+            if (vec[i].second == 0) zeroLine++;
+            else oneLine++;
+        } 
+
+        ll total = 0;
+        for (int i = 0; i < n; i++) {
+            int x = vec[i].first;
+            int y = vec[i].second;
+
+            int opY = 1-y;
+            if (s.find({x,opY}) != s.end()) {
+                if (y) {
+                    total += oneLine - 1;
+                } else {
+                    total += zeroLine - 1;
+                }
+            }
+
+            if (s.find({x-1,opY}) != s.end() && s.find({x+1,opY}) != s.end()) {
+                total++;
+            }
+        }
+        cout << total << "\n";
     }
     return 0;
 }

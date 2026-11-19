@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 115 / 200** as of 2026-11-19.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 116 / 200** as of 2026-11-19.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -27,7 +27,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 |---|---|---|---|---|
 | [greedy](greedy/) | 6 | ~1200 | low | 1200 and 1000 with hints at 50-60 min, two 1300s with heavy help, a 1200 solo with no hints, a 1400 with four hints. Finds the greedy direction alone, needs help when a choice must be postponed |
 | [prefix_sums](prefix_sums/) | 4 | ~1300 | medium | 1300 with hints in 75 min, 1200 solo first try, 1300 solo with no hints in 38 min, 1400 needed about ten hints. Solid at 1300, not yet at 1400 |
-| [number_theory](number_theory/) | 5 | ~1200 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints, 1200 divisor brute force solo with nudges on three slips |
+| [number_theory](number_theory/) | 6 | ~1250 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints, 1200 divisor brute force solo with nudges on three slips, 1400 counting problem solo with no idea hints |
 | [binary_search](binary_search/) | 2 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
@@ -82,4 +82,5 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-17 | [1974C Beautiful Triple Pairs](https://codeforces.com/problemset/problem/1974/C) | 1400 | number_theory (counting) | not recorded | accepted with 5 small hints, first submit | 'differ in exactly one position' splits into one case per position; in each case group by the two positions that must match, then count pairs with different values inside a group (seen * value as you go) |
 | 2026-11-18 | [1985E Secret Box](https://codeforces.com/problemset/problem/1985/E) | 1200 | number_theory | not recorded | accepted, idea found alone, nudges on 3 slips | fix two sides and the third is forced (k / (i*j)), so two loops are enough; a length-a piece fits in length-x in x - a + 1 places, not x - a; reread a condition letter by letter (y for j) |
 | 2026-11-18 | [2025C New Game](https://codeforces.com/problemset/problem/2025/C) | 1300 | two_pointers | not recorded | accepted, idea found alone, 1 tiny hint | order in the deck does not matter, so sort; the answer is the longest window of the sorted array with no gap above 1 and at most k distinct values; every while loop needs its variable to move (forgot i = j) |
-| 2026-11-19 | [1989C Two Movies](https://codeforces.com/problemset/problem/1989/C) | 1400 | greedy | not recorded | accepted with 4 hints | when a greedy has no good tie-break, do not break the tie yet: settle every forced choice first, count the ties, and hand them out at the end one at a time (+1 to the smaller, -1 to the larger) |
+| 2026-11-19 | [1989C Two Movies](https://codeforces.com/problemset/problem/1989/C) | 1400 | greedy | 60+ min | accepted with 4 hints | when a greedy has no good tie-break, do not break the tie yet: settle every forced choice first, count the ties, and hand them out at the end one at a time (+1 to the smaller, -1 to the larger) |
+| 2026-11-19 | [2009D Satyam and Counting](https://codeforces.com/problemset/problem/2009/D) | 1400 | number_theory (counting) | not recorded | accepted, idea found alone, no idea hints (1 WA from submitting the wrong file) | y is only 0 or 1, so a right angle has two shapes: a vertical pair plus any third point, or the point with both diagonal neighbours on the other line; use the tight constraint instead of general slopes |
