@@ -30,9 +30,11 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 5. [ ] [1941E Rudolf and k Bridges](https://codeforces.com/problemset/problem/1941/E) (1600, stretch)
 6. [x] [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) — finish time from the right, max of two lower bounds
 7. [ ] [1992D Test of Love](https://codeforces.com/problemset/problem/1992/D) (1200) — tags seen 2026-11-18 (dp, greedy), not blind anymore; file is set up in this folder
+8. [x] [1984C1 Magnitude (Easy Version)](https://codeforces.com/problemset/problem/1984/C1) (1300) — carry max and min reachable value
 
 ## Log
 
 | Date | Problem | Time | Result | What went wrong / what clicked |
 |---|---|---|---|---|
 | 2026-11-14 | [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) | ~1 hour | accepted, with several hints | Right-to-left finish-time dp found alone, and the stuck case (neighbour's finish + 1) was right from the start. The slip was branching on starting heights h[i] vs h[i+1]: the neighbour's height keeps changing, only its finish time matters. A flower is either never held up (takes h[i]) or stuck behind its neighbour (takes dp[i+1] + 1); both are lower bounds, so dp[i] = max of the two, no branches. A hand trace with an error in it hid the bug, so trace slowly. |
+| 2026-11-20 | [1984C1 Magnitude (Easy Version)](https://codeforces.com/problemset/problem/1984/C1) (1300) | ~33 min | accepted, fully solo, no hints, no questions | Kept two running values, the largest and the smallest c reachable so far. New max is the better of max + a[i] and |min + a[i]|; new min is min + a[i] (the abs branch in the min line never wins, so it is harmless). long long because sums reach 2e14. First dp solved with no help at all, the day after two heavily hinted problems. |

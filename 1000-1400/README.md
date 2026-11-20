@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 117 / 200** as of 2026-11-20.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 118 / 200** as of 2026-11-20.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -34,7 +34,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
 | [two_pointers](two_pointers/) | 3 | ~1300 | medium | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min with vague hints on a bug, 1300 window solo with one tiny hint |
 | [constructive](constructive/) | 1 | ~1100 | low | 1100 solo, construction found fast, missed the n=2 edge case |
-| [dp](dp/) | 1 | ? | low | one 1200 with several hints; finds the dp direction alone, transition needed help |
+| [dp](dp/) | 2 | ~1200 | low | one 1200 with several hints, then a 1300 fully solo in about 33 min (track the max and the min state) |
 | [trees](trees/) | 0 | ? | none | |
 | [strings](strings/) | 1 | ~1050 | low | 1100 with a hint (local recount around a point update), 40-50 min |
 | [games](games/) | 0 | ? | none | |
@@ -85,3 +85,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-19 | [1989C Two Movies](https://codeforces.com/problemset/problem/1989/C) | 1400 | greedy | 60+ min | accepted with 4 hints | when a greedy has no good tie-break, do not break the tie yet: settle every forced choice first, count the ties, and hand them out at the end one at a time (+1 to the smaller, -1 to the larger) |
 | 2026-11-19 | [2009D Satyam and Counting](https://codeforces.com/problemset/problem/2009/D) | 1400 | number_theory (counting) | not recorded | accepted, idea found alone, no idea hints (1 WA from submitting the wrong file) | y is only 0 or 1, so a right angle has two shapes: a vertical pair plus any third point, or the point with both diagonal neighbours on the other line; use the tight constraint instead of general slopes |
 | 2026-11-20 | [1975C Chamo and Mocha's Array](https://codeforces.com/problemset/problem/1975/C) | 1200 | greedy (observation) | not recorded | accepted with 4 hints | do not trust a pattern read off a sorted sample: break it with a small ugly input first; when an operation is confusing, tabulate what it does on the smallest inputs (2 keeps the min, 3 keeps the middle) |
+| 2026-11-20 | [1984C1 Magnitude (Easy Version)](https://codeforces.com/problemset/problem/1984/C1) | 1300 | dp | ~33 min | accepted, fully solo, no hints | when abs can flip a very negative value into a big one, the best future can come from the worst present, so carry both the largest and the smallest reachable value forward |

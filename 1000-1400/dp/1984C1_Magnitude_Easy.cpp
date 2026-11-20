@@ -95,7 +95,20 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n; cin >> n;
+        vector<int> v(n);
+        for(int i = 0; i < n; i++) cin>>v[i];
+
+        ll maxim = 0;
+        ll minim = 0;
+
+        // if maxim + v[i] > 0 then abs does matter 
+        // what if max + v[i] < 0 maxim would be abs of it 
+        for(int i = 0; i < n; i++) {
+            maxim = max(maxim+v[i], abs(minim + v[i]));
+            minim = min(minim+v[i], abs(minim + v[i]));
+        }
+        cout << maxim << "\n";
     }
     return 0;
 }
