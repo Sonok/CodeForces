@@ -104,7 +104,23 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+    	int largest = 0;
+    	int second = 0;
+
+    	int n; cin >> n;
+		int best = 0; // best seen so far
+
+    	vector<int> v(n); 
+		for(int i = 0; i < n; i++) cin >> v[i];
+
+		for(int i = 0; i < n - 2; i++) {
+			int mid = max(min(v[i], v[i+1]), min(max(v[i], v[i+1]), v[i+2]));
+			best = max(best, mid);
+		}
+		if (n == 2) best = min(v[0], v[1]);
+		cout << best << "\n"; 
+
+
     }
     return 0;
 }
