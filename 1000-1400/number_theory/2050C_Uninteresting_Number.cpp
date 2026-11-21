@@ -86,9 +86,7 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -97,7 +95,29 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        string n; cin >> n;
+        int total = 0;
+        int count2 = 0; int count3 = 0;
+        // you can only change number w 2 and 3 0,1 same 4-9 useless
+
+        for (char c : n) {
+            total += c - '0';
+            if (c - '0' == 2) count2++;
+            if (c - '0' == 3) count3++;
+        }
+        // 4-2 = 2 and 9-3 = 6 
+        bool found = false; // no divisible by 9 
+
+        for(int i = 0; i <= count2 && !found; i++) {
+            for (int j = 0; j <= count3; j++) {
+                if ((total + 2 * i + 6 * j) % 9 == 0) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        
+        cout << (found ? "YES\n" :  "NO\n");
     }
     return 0;
 }
