@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 120 / 200** as of 2026-11-23.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 121 / 200** as of 2026-11-23.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -34,7 +34,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
 | [two_pointers](two_pointers/) | 3 | ~1300 | medium | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min with vague hints on a bug, 1300 window solo with one tiny hint |
 | [constructive](constructive/) | 1 | ~1100 | low | 1100 solo, construction found fast, missed the n=2 edge case |
-| [dp](dp/) | 2 | ~1200 | low | one 1200 with several hints, then a 1300 fully solo in about 33 min (track the max and the min state) |
+| [dp](dp/) | 3 | ~1250 | low | one 1200 with several hints, then a 1300 fully solo in about 33 min (track the max and the min state), then a 1300 where the O(n^2) dp came alone and one hint turned it into O(n) |
 | [trees](trees/) | 0 | ? | none | |
 | [strings](strings/) | 1 | ~1050 | low | 1100 with a hint (local recount around a point update), 40-50 min |
 | [games](games/) | 0 | ? | none | |
@@ -88,3 +88,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-20 | [1984C1 Magnitude (Easy Version)](https://codeforces.com/problemset/problem/1984/C1) | 1300 | dp | ~33 min | accepted, fully solo, no hints | when abs can flip a very negative value into a big one, the best future can come from the worst present, so carry both the largest and the smallest reachable value forward |
 | 2026-11-21 | [2050C Uninteresting Number](https://codeforces.com/problemset/problem/2050/C) | 1200 | number_theory | not recorded | accepted | divisible by 9 means digit sum divisible by 9; only 2 -> 4 (+2) and 3 -> 9 (+6) change the sum, so try every count of each; residues repeat after 9 steps, so each loop could stop at 8 |
 | 2026-11-23 | [2005B2 The Strict Teacher (Hard Version)](https://codeforces.com/problemset/problem/2005/B2) | 1200 | binary_search | not recorded | accepted, idea found alone, 3 vague hints on slips | lower_bound gives the first teacher at or after the query, so the pair around David is b[i-1] and b[i]; size an array by what you read into it (q, not n); check a formula by hand on the sample before trusting it (gap 3 gives 1, so diff / 2, not (diff + 1) / 2) |
+| 2026-11-23 | [1945D Seraphim the Owl](https://codeforces.com/problemset/problem/1945/D) | 1300 | dp | not recorded | accepted, dp found alone, 1 hint for the speed-up | when a dp's inner loop is a min over j, sort the terms into i-only and j-only; the i part leaves the min and the j part (swap[j] - prefix[j]) becomes a running minimum, O(n^2) to O(n) |

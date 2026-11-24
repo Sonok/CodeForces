@@ -26,7 +26,7 @@ At 1000 to 1400 nearly every greedy is "sort by the right key, then sweep once".
 2. [x] [1921C Sending Messages](https://codeforces.com/problemset/problem/1921/C) (1000) — target 25 min
 3. [ ] [2004C Splitting Items](https://codeforces.com/problemset/problem/2004/C) (1200)
 4. [x] [1976B Increase/Decrease/Copy](https://codeforces.com/problemset/problem/1976/B) (1200) — forced per-element cost plus the cheapest copy source
-5. [ ] [1945D Seraphim the Owl](https://codeforces.com/problemset/problem/1945/D) (1300)
+5. [x] [1945D Seraphim the Owl](https://codeforces.com/problemset/problem/1945/D) (1300) — solved as a dp, filed in dp/
 6. [ ] [2050D Digital string maximization](https://codeforces.com/problemset/problem/2050/D) (1300)
 7. [ ] [2037D Sharky Surfing](https://codeforces.com/problemset/problem/2037/D) (1500, stretch: greedy + priority queue)
 8. [x] [1955C Inhabitant of the Deep Sea](https://codeforces.com/problemset/problem/1955/C) (1300) — independent ends, count totals instead of simulating

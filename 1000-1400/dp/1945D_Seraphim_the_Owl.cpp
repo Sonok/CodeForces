@@ -74,6 +74,7 @@ Output:
 #include <unordered_map>
 #include <set>
 #include <queue>
+#include <climits>
 #include <stack>
 #include <deque>
 #include <cmath>
@@ -102,7 +103,28 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n, m;
+        cin >> n >> m;
+        vector<int> a(n); vector<int> b(n);
+        for(int i = 0; i < n; i++) cin >> a[i];
+        for(int i = 0; i < n; i++) cin >> b[i];
+
+        vector<ll> prefix(n+1, 0);
+
+        for (int i = n-1; i >= 0; i--) {
+            prefix[i] = prefix[i+1] + b[i];
+        } 
+
+        vector<ll> swap(n+1, LONG_LONG_MAX);
+        swap[n] = 0;
+
+        ll smallest = swap[n] - prefix[n];
+
+        for (int i = n-1; i >= 0; i--) {
+            swap[i] = min(swap[i],smallest + a[i] + prefix[i+1]);
+            smallest = min(smallest, swap[i] - prefix[i]);
+        } 
+        cout << *min_element(swap.begin(), swap.begin() + m) << "\n";
     }
     return 0;
 }
