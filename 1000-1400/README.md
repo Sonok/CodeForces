@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 119 / 200** as of 2026-11-21.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 120 / 200** as of 2026-11-23.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -28,7 +28,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [greedy](greedy/) | 7 | ~1200 | low | 1200 and 1000 with hints at 50-60 min, two 1300s with heavy help, a 1200 solo with no hints, a 1400 with four hints, a 1200 observation problem with four hints. Finds the greedy direction alone, needs help when a choice must be postponed |
 | [prefix_sums](prefix_sums/) | 4 | ~1300 | medium | 1300 with hints in 75 min, 1200 solo first try, 1300 solo with no hints in 38 min, 1400 needed about ten hints. Solid at 1300, not yet at 1400 |
 | [number_theory](number_theory/) | 7 | ~1250 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints, 1200 divisor brute force solo with nudges on three slips, 1400 counting problem solo with no idea hints, 1200 digit-sum problem solo |
-| [binary_search](binary_search/) | 2 | ~1100 | low | 1100 solo, idea immediate, lost the rest to double vs long long |
+| [binary_search](binary_search/) | 3 | ~1150 | low | 1100 solo, idea immediate, lost the rest to double vs long long; 1400 idea solo with hints on bugs; 1200 idea solo (lower_bound on sorted positions), three vague hints on slips |
 | [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
@@ -87,3 +87,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-20 | [1975C Chamo and Mocha's Array](https://codeforces.com/problemset/problem/1975/C) | 1200 | greedy (observation) | not recorded | accepted with 4 hints | do not trust a pattern read off a sorted sample: break it with a small ugly input first; when an operation is confusing, tabulate what it does on the smallest inputs (2 keeps the min, 3 keeps the middle) |
 | 2026-11-20 | [1984C1 Magnitude (Easy Version)](https://codeforces.com/problemset/problem/1984/C1) | 1300 | dp | ~33 min | accepted, fully solo, no hints | when abs can flip a very negative value into a big one, the best future can come from the worst present, so carry both the largest and the smallest reachable value forward |
 | 2026-11-21 | [2050C Uninteresting Number](https://codeforces.com/problemset/problem/2050/C) | 1200 | number_theory | not recorded | accepted | divisible by 9 means digit sum divisible by 9; only 2 -> 4 (+2) and 3 -> 9 (+6) change the sum, so try every count of each; residues repeat after 9 steps, so each loop could stop at 8 |
+| 2026-11-23 | [2005B2 The Strict Teacher (Hard Version)](https://codeforces.com/problemset/problem/2005/B2) | 1200 | binary_search | not recorded | accepted, idea found alone, 3 vague hints on slips | lower_bound gives the first teacher at or after the query, so the pair around David is b[i-1] and b[i]; size an array by what you read into it (q, not n); check a formula by hand on the sample before trusting it (gap 3 gives 1, so diff / 2, not (diff + 1) / 2) |

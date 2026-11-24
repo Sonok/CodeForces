@@ -124,7 +124,28 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        int n, m, q;
+        cin >> n >> m >> q; 
+        vector<int> b(m); vector<int> a(q);
+        for(int i = 0; i < m; i++) cin >> b[i]; // teacher postions
+        for(int i = 0; i < q; i++) cin >> a[i]; // querires
+
+        sort(b.begin(), b.end()); // teacher positions arranged
+        // 1 6 -> 2 5 -> 3 4 
+        for (int query : a) {
+            // no case will it be overlapping 
+            int i = lower_bound(b.begin(), b.end(), query) - b.begin();
+            // lower bound is index whre x > b[i] 
+            if (i == 0) {
+                cout << b[0] - 1 << "\n"; // lhs squish
+            } else if (i == (int) b.size()) {
+                cout << n - b[b.size() - 1] << "\n"; // rhs sqush 
+            } else {
+                int diff = b[i] - b[i-1]; // okay so they don't necessarily have to be squished b[i] and b[i-1]
+                // just wait until either step over each other or adj 
+                cout << (int) (diff / 2) << "\n";
+            }
+        }
     }
     return 0;
 }
