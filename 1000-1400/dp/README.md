@@ -25,7 +25,7 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 ## Plan
 1. [x] [1948C Arrow Path](https://codeforces.com/problemset/problem/1948/C) (1200, grid) — solved 2026-10-12 with BFS, filed in [graphs](../graphs/)
 2. [ ] [1941D Rudolf and the Ball Game](https://codeforces.com/problemset/problem/1941/D) (1300)
-3. [ ] [2033C Sakurako's Field Trip](https://codeforces.com/problemset/problem/2033/C) (1400)
+3. [x] [2033C Sakurako's Field Trip](https://codeforces.com/problemset/problem/2033/C) (1400) — retired 2026-11-25 unsolved, solution seen; greedy version filed in greedy/
 4. [ ] [2050E Three Strings](https://codeforces.com/problemset/problem/2050/E) (1500)
 5. [ ] [1941E Rudolf and k Bridges](https://codeforces.com/problemset/problem/1941/E) (1600, stretch)
 6. [x] [1987C Basil's Garden](https://codeforces.com/problemset/problem/1987/C) (1200) — finish time from the right, max of two lower bounds

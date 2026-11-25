@@ -104,8 +104,29 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
+// NOT MY OWN SOLVE. Retired 2026-11-25 after many hints; this is the reference
+// solution I was shown. Not submitted, so it does not count toward the 200.
+// Idea: position i only trades with j = n-1-i, so the array is nested pairs.
+// Go from the outside in. The pair outside (a[i-1], a[j+1]) is already final,
+// so count the clashes with it if pair i stays and if it swaps, keep the smaller.
+// Greedy is safe because the cost between two neighbouring pairs depends only on
+// whether they face the same way or opposite ways, and the inner pair can always
+// pick either, whatever the outer pair did.
 void solve() {
-    // write solution here
+    int n; cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    for (int i = 1; i < n / 2; i++) {
+        int j = n - 1 - i;
+        int keep    = (a[i] == a[i-1]) + (a[j] == a[j+1]);
+        int swapped = (a[j] == a[i-1]) + (a[i] == a[j+1]);
+        if (swapped < keep) swap(a[i], a[j]);
+    }
+
+    int ans = 0;
+    for (int i = 0; i + 1 < n; i++) ans += (a[i] == a[i+1]);
+    cout << ans << "\n";
 }
 
 int main() {
