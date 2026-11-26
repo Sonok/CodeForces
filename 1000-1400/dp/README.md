@@ -1,6 +1,6 @@
 # DP
 
-Status: in progress (1 done)
+Status: in progress (3 solved, 1 retired unsolved)
 
 ## What it is
 Break the problem into states, each state's answer depends on smaller states. Write the state in one sentence, write the transition, write the base case, fill in order.

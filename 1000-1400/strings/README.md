@@ -1,6 +1,6 @@
 # Strings
 
-Status: started 2026-10-16
+Status: in progress (1 solved)
 
 ## What it is
 At 1000 to 1400 string problems are counting and structure, not algorithms. Frequency arrays, palindromes, two pointers, prefix counts, and simulation.

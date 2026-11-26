@@ -1,6 +1,6 @@
 # Two pointers / sliding window
 
-Status: in progress
+Status: in progress (3 solved)
 
 ## What it is
 Two indices that only ever move forward. Total work O(n) because each pointer moves at most n times.

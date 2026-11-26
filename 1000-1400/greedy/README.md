@@ -1,6 +1,6 @@
 # Greedy
 
-Status: in progress (4 of 9 done)
+Status: in progress (7 solved, 1 retired unsolved)
 
 ## What it is
 Make the locally best choice at each step and prove nothing better exists.

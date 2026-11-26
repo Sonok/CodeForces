@@ -1,6 +1,6 @@
 # Number theory
 
-Status: in progress (1 of 6 done)
+Status: in progress (7 solved)
 
 ## What it is
 Divisors, gcd, lcm, primes, modular arithmetic, parity. Count something without simulating it.

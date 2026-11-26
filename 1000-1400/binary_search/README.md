@@ -1,6 +1,6 @@
 # Binary search
 
-Status: not started
+Status: in progress (3 solved)
 
 ## What it is
 If "is X achievable?" is monotone in X (true for all X up to some point, then false), you can find the boundary in log steps instead of trying every X. Most Div 3 E problems are this.

@@ -1,6 +1,6 @@
 # Graphs: BFS / DFS / grids
 
-Status: in progress (1 solved, 0 of 5 plan items)
+Status: in progress (2 solved)
 
 ## What it is
 Nodes and edges. BFS gives shortest paths when every edge has cost 1. DFS finds connected components and explores trees. A grid is a graph where each cell has 4 neighbors.

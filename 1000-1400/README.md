@@ -20,8 +20,8 @@ standards, so they don't count. Ratings listed are approximate.
 ## Skill estimates
 
 Rough rating per skill, updated after every solve. "Solo" means the idea was found without hints.
-Most rows rest on one or two problems, so treat them as a first guess, not a verdict.
-Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
+Rows with three or more problems are fair estimates; the rest are a first guess, not a verdict.
+Overall rating 1110 after 11 contests (last rated round 2026-07-12; peak 1155).
 
 | Skill | Solved | Est. | Confidence | Evidence |
 |---|---|---|---|---|
@@ -39,9 +39,12 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [strings](strings/) | 1 | ~1050 | low | 1100 with a hint (local recount around a point update), 40-50 min |
 | [games](games/) | 0 | ? | none | |
 
-Pattern across all of it: ideas at 1100-1200 come either solo or after one nudge, so the ceiling is not
-the algorithm yet. Time goes to implementation: off-by-ones, overflow, wrong operator, stale loop
-variables. Recording the time on every solve is the single biggest gap in this table.
+Pattern across all of it (2026-11-26, 35 problems logged since the restart, 34 solved): ideas at 1200-1300 now
+usually come solo or after one nudge, and the code follows quickly. At 1400 the block is the key
+observation, or trusting it: believing a greedy is safe, seeing that a swap splits a cycle, spotting
+which terms of a dp leave the inner loop. Drawing a small case by hand is what unlocks those. Slips
+still cost time on most problems: off-by-ones, wrong index, operator precedence, a missing brace,
+arguments in the wrong order. Most solves still have no time recorded.
 
 ## Where to find problems
 - [Codeforces problemset filtered 1000–1400](https://codeforces.com/problemset?tags=1000-1400) — sort by contest id descending and only take 1917+.

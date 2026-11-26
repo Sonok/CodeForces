@@ -1,6 +1,6 @@
 # Prefix sums / difference arrays
 
-Status: in progress (2 of 5 done)
+Status: in progress (4 solved)
 
 ## What it is
 Precompute running totals so any range query is O(1). Difference arrays do the reverse: many range updates, then one pass to read values.

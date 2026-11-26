@@ -1,6 +1,6 @@
 # Bitmasks
 
-Status: not started
+Status: in progress (1 solved)
 
 ## What it is
 Treat an integer as a set of bits. AND, OR, XOR each have properties you can exploit, and small sets (n <= 20) can be enumerated as integers 0 to 2^n - 1.
