@@ -1,7 +1,7 @@
 # 1000 -> 1400
 
 Goal: 1400 by 2026-12-31. Rating at restart (2026-09-30): ~1150.
-Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 122 / 200** as of 2026-11-25.
+Problem count goal: 200 solved on Codeforces (per profile, not file count). **Progress: 123 / 200** as of 2026-11-26.
 `../0-1000/` is the archive. It got me to 1000+, it stays jumbled, we don't look at it.
 
 ## How this works
@@ -29,7 +29,7 @@ Overall rating 1100 as of 2026-10-14 (was ~1150 at the restart).
 | [prefix_sums](prefix_sums/) | 4 | ~1300 | medium | 1300 with hints in 75 min, 1200 solo first try, 1300 solo with no hints in 38 min, 1400 needed about ten hints. Solid at 1300, not yet at 1400 |
 | [number_theory](number_theory/) | 7 | ~1250 | medium | 1200 solo (residue pairs), 1200 with a direction hint (reverse processing), 1300 idea solo in ~55 min with hints only on a floating-point bug, 1400 counting problem with five small hints, 1200 divisor brute force solo with nudges on three slips, 1400 counting problem solo with no idea hints, 1200 digit-sum problem solo |
 | [binary_search](binary_search/) | 3 | ~1150 | low | 1100 solo, idea immediate, lost the rest to double vs long long; 1400 idea solo with hints on bugs; 1200 idea solo (lower_bound on sorted positions), three vague hints on slips |
-| [graphs](graphs/) | 1 | ~1150 | low | 1200 BFS with vague hints |
+| [graphs](graphs/) | 2 | ~1200 | low | 1200 BFS with vague hints; 1400 permutation-cycle problem where the cost formula came alone after two nudges (draw the cycle, try one swap), code written alone |
 | [dsu](dsu/) | 1 | ~1050 | low | 1100 with hints, needed the cycle-decomposition idea |
 | [bitmasks](bitmasks/) | 1 | ~1050 | low | 1100 with hints, picked AND where OR was needed |
 | [two_pointers](two_pointers/) | 3 | ~1300 | medium | 1300 in 35 min (only block was a misread), 1200 window idea solo in ~37 min with vague hints on a bug, 1300 window solo with one tiny hint |
@@ -91,3 +91,4 @@ variables. Recording the time on every solve is the single biggest gap in this t
 | 2026-11-23 | [1945D Seraphim the Owl](https://codeforces.com/problemset/problem/1945/D) | 1300 | dp | not recorded | accepted, dp found alone, 1 hint for the speed-up | when a dp's inner loop is a min over j, sort the terms into i-only and j-only; the i part leaves the min and the j part (swap[j] - prefix[j]) becomes a running minimum, O(n^2) to O(n) |
 | 2026-11-25 | [2033C Sakurako's Field Trip](https://codeforces.com/problemset/problem/2033/C) | 1400 | greedy | not recorded (two days) | not solved, retired after many hints and the full solution; not submitted | the pair structure and the greedy shape came alone; the block was the decision rule (compare pair i with the settled pair outside it, not the undecided pair inside) and trusting the greedy: a choice is safe when it takes nothing away from later choices, here because only same-way vs opposite-way matters between neighbouring pairs |
 | 2026-11-25 | [2035C Alya and Permutation](https://codeforces.com/problemset/problem/2035/C) | 1400 | constructive | not recorded | accepted, general case found alone, about 5 nudges on the edge cases | only the last few positions matter, put everything else in any order; `&` binds looser than `==`, so write `(n & (n-1)) == 0`; the special n (a power of two, a power of two plus one) need their own tail, and a checker that replays the output beats diff when any answer is accepted |
+| 2026-11-26 | [2033E Sakurako, Kosuke, and the Permutation](https://codeforces.com/problemset/problem/2033/E) | 1400 | graphs (permutation cycles) | not recorded | accepted, 3 small hints on the idea, 2 nudges on C++ slips | follow i -> p_i and a permutation falls apart into circles; a swap inside a circle is two positions trading arrows, which snips off a piece, so a circle of length L costs (L - 1) / 2; when stuck on a permutation, draw the arrows for a sample |

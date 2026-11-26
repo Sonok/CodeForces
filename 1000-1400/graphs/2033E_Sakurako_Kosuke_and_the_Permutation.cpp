@@ -98,9 +98,7 @@ using pll = pair<long long,long long>;
 const ll INF = (ll)1e18;
 const int MOD = 1e9 + 7;
 
-void solve() {
-    // write solution here
-}
+
 
 int main() {
     ios::sync_with_stdio(false);  // disconnect c++ streams and C stdio
@@ -109,7 +107,35 @@ int main() {
     int t = 1;
     cin >> t;          // comment this if single test case
     while (t--) {
-        solve();
+        // p_i  = i and p_j = j
+    	// instead p_i = j and p_j = i 
+
+        // if p_i = i do you touch it? 
+
+		// it's like n values 
+		// clearly some like O(n) algorithm
+		set<int> s;
+		int n; cin >> n;
+		vector<int> p(n+1,0); 
+		for(int i = 1; i <= n; i++) cin >> p[i];
+
+		int count = 0;
+		int i = 1; // maybe we count by index not value 
+		for(int i = 1; i <= n; i++){
+			if (s.find(i) != s.end()) continue; // you already saw the ring 
+			s.emplace(i);
+			int j = p[i];
+			int ring = 1;
+			while(j != i) {
+				s.emplace(j);
+				ring++;
+				j = p[j];
+			}
+			if (ring <= 2) continue; // don't add to count
+			if (ring % 2) count += ring / 2;
+			else count += ring/2 - 1;
+		}
+		cout << count << "\n";
     }
     return 0;
 }
