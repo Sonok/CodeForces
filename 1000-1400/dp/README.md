@@ -13,6 +13,7 @@ Break the problem into states, each state's answer depends on smaller states. Wr
 - **Pick or skip** with a state for the previous pick: `dp[i][took_prev]`.
 - **Longest increasing subsequence** O(n log n) with lower_bound on a tails array.
 - **Prefix-sum DP** when the transition sums over a range: keep a running prefix of dp.
+- **Game dp.** Track d = player 1 minus player 2, state = position + whose choice, fill backwards, max for one player and min for the other. Lesson: [game_dp_lesson.tex](game_dp_lesson.tex) ([pdf](game_dp_lesson.pdf)).
 
 **Learn:** [USACO Guide: Intro to DP](https://usaco.guide/gold/intro-dp), [Knapsack](https://usaco.guide/gold/knapsack)
 

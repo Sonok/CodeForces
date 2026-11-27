@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{parskip}
+\linespread{1.12}
+
+\definecolor{codebg}{gray}{0.96}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{gray!40},
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  xleftmargin=4pt,
+  xrightmargin=4pt,
+  aboveskip=10pt,
+  belowskip=10pt
+}
+
+\title{Game DP: a quick lesson}
+\author{}
+\date{Written 2026-11-27, after Round 1138 (Div.~3) problem D}
+
+\begin{document}
+\maketitle
+
+\section*{1. How to spot one}
+
+It is a game dp when all three are true:
+
+\begin{itemize}
+  \item Two players take turns making choices.
+  \item They want opposite things.
+  \item The statement says ``both play optimally'' and both can see everything.
+\end{itemize}
+
+You are never asked to play the game. You are asked what the result is when
+nobody makes a mistake.
+
+\section*{2. The three rules}
+
+\textbf{Rule 1. One score, not two.}
+Do not track each player's total. Track the gap:
+\[
+  d = (\text{player 1's total}) - (\text{player 2's total}).
+\]
+Player 1 wants $d$ large. Player 2 wants $d$ small. One number covers both.
+
+\textbf{Rule 2. The state is ``what matters from here on''.}
+Usually that is two things: where we are in the game, and whose choice it is.
+What happened earlier is already paid for and does not go in the state.
+
+\textbf{Rule 3. Fill it backwards. Max for one player, min for the other.}
+A good move now depends on what happens after it. At the end of the game the
+answer is known (nothing more happens, so $0$). So start there and walk back
+to the first move.
+
+\section*{3. Worked example: Round 1138 D}
+
+There are $n$ pairs of shops. Whoever is on the \emph{left} chooses:
+
+\begin{itemize}
+  \item \textbf{Buy:} left person pays $x_i$, right person pays $y_i$, both stay on their sides.
+  \item \textbf{Skip:} nobody pays, they swap sides.
+\end{itemize}
+
+Sunny starts on the left. $d$ is Sunny's total minus Aubrey's total.
+
+\subsection*{The state}
+
+There are only two seating pictures:
+
+\begin{verbatim}
+   picture S:   Sunny  | corridor | Aubrey     (Sunny chooses)
+   picture A:   Aubrey | corridor | Sunny      (Aubrey chooses)
+\end{verbatim}
+
+For each shop $i$ keep two numbers:
+
+\begin{itemize}
+  \item $S_i$ = how much $d$ will change from shop $i$ to the end, starting in picture S.
+  \item $A_i$ = the same, starting in picture A.
+\end{itemize}
+
+\subsection*{The transitions}
+
+\begin{align*}
+  S_i &= \max\bigl(\,\underbrace{(x_i - y_i) + S_{i+1}}_{\text{buy}},\;
+                   \underbrace{A_{i+1}}_{\text{skip}}\,\bigr)
+  &&\text{Sunny chooses, wants the max}\\[4pt]
+  A_i &= \min\bigl(\,\underbrace{(y_i - x_i) + A_{i+1}}_{\text{buy}},\;
+                   \underbrace{S_{i+1}}_{\text{skip}}\,\bigr)
+  &&\text{Aubrey chooses, wants the min}
+\end{align*}
+
+Base case: $S_{n+1} = A_{n+1} = 0$. The answer is the sign of $S_1$.
+
+Why the signs flip: in picture A it is Aubrey who pays $x_i$ and Sunny who pays
+$y_i$, so the gap moves by $y_i - x_i$.
+
+\subsection*{By hand}
+
+Take $x = (1, 3)$ and $y = (4, 2)$. The expected answer is ``Aubrey''.
+
+\begin{verbatim}
+   after the end:   S = 0      A = 0
+
+   shop 2 (x=3, y=2):
+       S = max( (3-2) + 0 ,  0 ) = max( 1,  0) =  1
+       A = min( (2-3) + 0 ,  0 ) = min(-1,  0) = -1
+
+   shop 1 (x=1, y=4):
+       S = max( (1-4) + 1 , -1 ) = max(-2, -1) = -1
+\end{verbatim}
+
+$d = -1 < 0$, so Aubrey wins.
+
+\subsection*{The code}
+
+\begin{lstlisting}
+long long S = 0, A = 0;                  // after the last shop
+for (int i = n - 1; i >= 0; i--) {
+    long long newS = max((x[i] - y[i]) + S, A);   // buy, or skip
+    long long newA = min((y[i] - x[i]) + A, S);   // buy, or skip
+    S = newS;
+    A = newA;
+}
+// answer: S > 0 Sunny, S < 0 Aubrey, S == 0 Draw
+\end{lstlisting}
+
+\section*{4. The recipe for any game dp}
+
+\begin{enumerate}
+  \item Write $d$ = player 1 minus player 2.
+  \item List the pictures the game can be in at one moment (position, whose choice).
+  \item For each picture, list the moves. For each move write: how $d$ changes, and which picture comes next.
+  \item The player who wants $d$ big takes the max of their moves. The other takes the min.
+  \item Set the end of the game to $0$ and fill from the back.
+  \item Trace the smallest sample by hand before you run anything.
+\end{enumerate}
+
+\section*{5. Slips to watch for}
+
+\begin{itemize}
+  \item \textbf{Going forwards.} This was the slip in the round. Forwards you do not
+        yet know what a choice leads to. Game dps go from the end to the start.
+  \item \textbf{Tracking two totals.} A pair per player doubles the bookkeeping and
+        hides the idea. Only the gap matters.
+  \item \textbf{Overwriting too early.} $S_i$ needs the old $A$ and $A_i$ needs the
+        old $S$. Compute both new values first, then assign.
+  \item \textbf{Wrong sign in the second picture.} When the players swap roles, who
+        pays what swaps too.
+  \item \textbf{\texttt{int} overflow.} $2\cdot10^5$ shops at up to $10^9$ each is
+        $2\cdot10^{14}$. Use \texttt{long long}.
+  \item \textbf{Reusing a name.} \texttt{ll y = ... y[i]} hides the vector \texttt{y}.
+        Give temporaries their own names.
+\end{itemize}
+
+\section*{6. The other kind: win or lose, no score}
+
+Some games have no totals at all. The last player able to move wins. Then each
+position is just \emph{winning} or \emph{losing} for the player about to move:
+
+\begin{itemize}
+  \item A position is \textbf{winning} if \emph{some} move leads to a losing position.
+  \item A position is \textbf{losing} if \emph{every} move leads to a winning position
+        (or there is no move).
+\end{itemize}
+
+Example: a pile of stones, take 1, 2 or 3, whoever takes the last stone wins.
+
+\begin{verbatim}
+   stones:   0  1  2  3  4  5  6  7  8
+   result:   L  W  W  W  L  W  W  W  L
+\end{verbatim}
+
+$0$ is losing (no move). $1, 2, 3$ can reach $0$, so they are winning. $4$ can
+only reach $3, 2, 1$, all winning, so it is losing. The pattern repeats every $4$.
+
+It is the same idea as before with $\max$ and $\min$ replaced by ``some'' and
+``every''. Fill from the end, and when the table shows a pattern, the answer is
+often a one-line formula.
+
+\end{document}
